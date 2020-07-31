@@ -12,9 +12,12 @@ class ProfilesController extends Controller
     {
        // dd($user);//dd will echo out and stop the remaining operation
        //dd(User::find($user)); 
-       $user = User::find($user);
+      // echo($user);
+       $user = User::findOrFail($user);
+       //$user = User::where('username', $user)-> first();
+      //echo($user);
 
-       return view('home',[
+       return view('profiles/index',[
            'user' => $user,//user on lhs is the variable will use in views
        ]);
 
