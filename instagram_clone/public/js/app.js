@@ -1917,16 +1917,36 @@ __webpack_require__.r(__webpack_exports__);
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
   // accept the user id
-  props: ['userId'],
+  props: ['userId', 'follows'],
   mounted: function mounted() {
     console.log('Component mounted.');
+  },
+  // if the user clicks on follow
+  data: function data() {
+    return {
+      status: this.follows
+    };
   },
   // follow user method
   methods: {
     FollowUser: function FollowUser() {
+      var _this = this;
+
       axios.post('/follow/' + this.userId).then(function (response) {
+        // updates the text of the button
+        _this.status = !_this.status;
         console.log(response.data);
+      }) // the 401 error ;; when you try to follow a user before you login or register
+      ["catch"](function (errors) {
+        if (errors.response.status == 401) {
+          window.location = '/login';
+        }
       });
+    }
+  },
+  computed: {
+    ButtonText: function ButtonText() {
+      return this.status ? 'Unfollow' : 'Follow';
     }
   }
 });
@@ -37526,14 +37546,11 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c(
-      "button",
-      {
-        staticClass: "btn btn-primary ml-4 mt-1",
-        on: { click: _vm.FollowUser }
-      },
-      [_vm._v("Follow Me")]
-    )
+    _c("button", {
+      staticClass: "btn btn-primary ml-4 mt-1",
+      domProps: { textContent: _vm._s(_vm.ButtonText) },
+      on: { click: _vm.FollowUser }
+    })
   ])
 }
 var staticRenderFns = []

@@ -18,7 +18,8 @@
     <title>Laravel</title>
 
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    
     <!-- Styles  -->
     <style>
         html,
@@ -42,7 +43,7 @@
         }
 
         .name {
-            font-family: Pacifico;
+            font-family: 'Pacifico', sans-serif;
             font-size: 80px;
         }
 

@@ -15,7 +15,7 @@
                 <!-- follow button -->
                 <!-- this will create a view for us in FollowButton.vue -->
                 <!-- give the user id through property -->
-                <follow-button user-id="{{ $user->id }}"></follow-button>
+                <follow-button user-id="{{ $user->id }}" follows="{{ $follows }}"></follow-button>
             </div>
                 <!-- if the user has the authorization to update the only the user will be allowed to add posts -->
                 @can('update', $user->profile)
@@ -30,8 +30,8 @@
             <!-- info -->
             <div class="d-flex">
                 <div class="pr-4"><strong class="pr-2">{{ $user->posts->count() }}</strong>posts</div>
-                <div class="pr-4"><strong class="pr-2">645</strong>followers</div>
-                <div class="pr-4"><strong class="pr-2">702</strong>following</div>
+                <div class="pr-4"><strong class="pr-2">{{ $user->profile->followers->count() }}</strong>followers</div>
+                <div class="pr-4"><strong class="pr-2">{{ $user->following->count() }}</strong>following</div>
             </div>
 
             <!-- edit profile -->
