@@ -11,18 +11,21 @@ class CreateProfilesTable extends Migration
      *
      * @return void
      */
-    public function up()
+
+     public function up()
     {
         Schema::create('profiles', function (Blueprint $table) {
-            $table->id();
+            $table->id(); 
             $table->unsignedBigInteger('user_id');//for connecting the profiles table with the user table(ie.the foriegn table)
             $table->string('title')->nullable();
             $table->text('description')->nullable();
             $table->string('url')->nullable();
+            $table->string('image')->nullable();
             $table->timestamps();
 
             $table->index('user_id');
         });
+
     }
 
     /**

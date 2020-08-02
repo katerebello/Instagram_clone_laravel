@@ -1,100 +1,143 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
 
-            .full-height {
-                height: 100vh;
-            }
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
+    <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <title>Laravel</title>
 
-            .position-ref {
-                position: relative;
-            }
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
+    <!-- Styles  -->
+    <style>
+        html,
+        body {
+            background: url();
+            color: #000;
+            font-family: 'Nunito', sans-serif;
+            font-weight: 200;
+            height: 100vh;
+            margin: 0;
+            overflow-y: hidden;
+        }
 
-            .content {
-                text-align: center;
-            }
+        .full-height {
+            height: 100vh;
+        }
 
-            .title {
-                font-size: 84px;
-            }
+        .appname {
+            text-align: center;
+            margin-top: 130px;
+        }
 
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
+        .name {
+            font-family: Pacifico;
+            font-size: 80px;
+        }
 
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
+        .subtitle {
+            margin-bottom: 20px;
+            margin-top: 30px;
+        }
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
+        .position,
+        .imgblock {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
+        .btn {
+            border-radius: 15px;
+            width: 400px;
+            margin-bottom: 20px;
 
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
-            </div>
+        }
+
+        .links>a {
+            color: #000;
+            padding: 5px;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: .1rem;
+            text-decoration: none;
+            text-transform: uppercase;
+            display: block;
+        }
+
+        .img {
+            height: 50px;
+            border-radius: 5px;
+            border: 0px;
+        }
+
+        .download {
+            margin-top: 45px;
+            /* border: 0px; */
+        }
+
+        .download:hover,
+        .img:hover {
+            background-color: transperent;
+            box-shadow: 5px 10px 8px 2px #888888;
+        }
+
+        .app {
+            border-radius: 9px;
+            height: 52px;
+        }
+
+        .imgblock>a {
+            margin-left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="full-height">
+        <div class="appname">
+            <div class="name">Instagram</div>
+            <div class="subtitle">Sign up to see photos and videos from your friends.</div>
         </div>
-    </body>
+
+
+        <div class="position">
+            @if (Route::has('login'))
+            <div class="links">
+                @auth
+                <a href="{{ url('/home') }}">Home</a>
+                @else
+                <a class="btn btn-primary" role="button" href="{{ route('login') }}">Log In</a>
+
+                @if (Route::has('register'))
+                <a class="btn btn-primary" role="button" href="{{ route('register') }}">Register</a>
+                @endif
+                @endauth
+            </div>
+            @endif
+        </div>
+
+        <div class="imgblock">
+            <a class="download" href="https://apps.apple.com/us/app/instagram/id389801252" target="_blank">
+                <img class="img app" src="/svg/app-store.svg" alt="">
+            </a>
+
+            <a class="download " href="https://play.google.com/store/apps/details?id=com.instagram.android&hl=en_IN" target="_blank">
+                <img class="img play" src="/svg/play-store.svg" alt="">
+            </a>
+        </div>
+    </div>
+</body>
+
 </html>
