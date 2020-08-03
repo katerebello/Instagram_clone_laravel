@@ -117,7 +117,7 @@
             @if (Route::has('login'))
             <div class="links">
                 @auth
-                <a href="{{ url('/home') }}">Home</a>
+                <a href="{{ url('/') }}">Home</a>
                 @else
                 <a class="btn btn-primary" role="button" href="{{ route('login') }}">Log In</a>
 

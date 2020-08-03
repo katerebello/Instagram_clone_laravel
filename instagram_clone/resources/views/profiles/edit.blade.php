@@ -1,17 +1,17 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container" style="overflow: auto;">
     <form action="/profile/{{ $user->id }}" enctype="multipart/form-data" method="POST">
         @csrf
         @method('PATCH')
 
 
-        <div class="row">
-            <div class="col-8 ">
+        <div class="row offset-3">
+            <div class="col-8">
 
                 <div class="row">
-                    <h3 class="ml-3">Edit Profile</h3>
+                    <h3 class="ml-3 mt-4 h3" style="font-weight: bold;">Edit Profile</h3>
                 </div>
 
                 <!-- title -->
@@ -64,7 +64,7 @@
         </div>
 
         <!-- image -->
-        <div class="row">
+        <div class="row offset-3">
             <label for="image" class="col-md-4 col-form-label ">Profile Image</label>
             <input type="file" class="ml-3 form-control-file" id="image" name="image">
 
@@ -75,7 +75,7 @@
         </div>
 
         <!-- to submit -->
-        <div class="row pt-4">
+        <div class="row pt-4 offset-3">
             <button class="ml-3 btn btn-primary">SAVE PROFILE</button>
         </div>
     </form>

@@ -1,13 +1,11 @@
 <template>
     <div>
         <!-- follow button -->
-        <button class="btn btn-primary ml-4 mt-1" @click="FollowUser" v-text="ButtonText"></button>
+        <!-- <button class="btn btn-primary ml-4 mt-1" @click="FollowUser" v-text="ButtonText"></button> -->
 
-        <!-- <a href="#" role="button" @click="FollowUser" v-text="ButtonText" ></a> -->
+        <a href="" role="button" class="pl-1" style="text-decoration:none" @click="FollowUser" v-text="ButtonText"></a>
     </div>
 </template>
-
-
 
 <script>
     export default {

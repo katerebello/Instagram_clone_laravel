@@ -9,14 +9,18 @@
         <div class="col-8 pt-5">
             <!-- username -->
             <div class="d-flex justify-content-between align-items-baseline pt-4">
-            <div class="d-flex pb-3">
-                <h1>{{ $user->username }}</h1>
+                <div class="d-flex pb-3">
+                    <h1>{{ $user->username }}</h1>
 
-                <!-- follow button -->
-                <!-- this will create a view for us in FollowButton.vue -->
-                <!-- give the user id through property -->
-                <follow-button user-id="{{ $user->id }}" follows="{{ $follows }}"></follow-button>
-            </div>
+                    <!-- follow button -->
+                    <!-- this will create a view for us in FollowButton.vue -->
+                    <!-- give the user id through property -->
+                    @can('view', $user->profile)
+                    <follow-button user-id="{{ $user->id }}" follows="{{ $follows }}"></follow-button>
+                    @endcan
+
+
+                </div>
                 <!-- if the user has the authorization to update the only the user will be allowed to add posts -->
                 @can('update', $user->profile)
                 <a href="/p/create" style="color:black; text-decoration:none;">
@@ -25,20 +29,22 @@
                 </a>
                 @endcan
 
+
+
             </div>
 
             <!-- info -->
             <div class="d-flex">
-                <div class="pr-4"><strong class="pr-2">{{ $user->posts->count() }}</strong>posts</div>
-                <div class="pr-4"><strong class="pr-2">{{ $user->profile->followers->count() }}</strong>followers</div>
-                <div class="pr-4"><strong class="pr-2">{{ $user->following->count() }}</strong>following</div>
+                <div class="pr-4"><strong class="pr-2">{{ $postsCount }}</strong>posts</div>
+                <div class="pr-4"><strong class="pr-2">{{ $followersCount }}</strong>followers</div>
+                <div class="pr-4"><strong class="pr-2">{{ $followingCount }}</strong>following</div>
             </div>
 
             <!-- edit profile -->
             @can('update', $user->profile)
             <div class="pt-3 d-flex justify-content-end">
                 <i class="fas fa-user-edit pt-1 pr-1"></i>
-                <a href="/profile/{{ $user->id }}/edit" class="-2" style="color:black; text-decoration:none;">Edit Profile</a>
+                <a href="/profile/{{ $user->id }}/edit" style="color:black; text-decoration:none;">Edit Profile</a>
             </div>
             @endcan
 
@@ -49,7 +55,7 @@
             <div>{{ $user->profile->description }}</div>
 
             <!-- url -->
-            <div><a href="#">{{ $user->profile->url }}</a></div>
+            <div><a href="{{ $user->profile->url }}" target="_blank">{{ $user->profile->url }}</a></div>
         </div>
     </div>
 

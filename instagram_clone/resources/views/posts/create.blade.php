@@ -6,11 +6,11 @@
     <form action="/p" enctype="multipart/form-data" method="POST">
 
         @csrf
-        <div class="row ">
+        <div class="row offset-3">
             <div class="col-8 ">
 
                 <div class="row">
-                    <h3 class="pt-4 ml-3">ADD NEW POST</h3>
+                    <h3 class="pt-4 ml-3 h3" style="font-weight: bold;">ADD NEW POST</h3>
                 </div>
 
                 <div class="form-group row">
@@ -29,7 +29,7 @@
         </div>
 
         <!-- image -->
-        <div class="row">
+        <div class="row offset-3">
             <label for="image" class="col-md-4 col-form-label ">Post Image</label>
             <input type="file" class="ml-3 form-control-file" id="image" name="image">
 
@@ -40,7 +40,7 @@
         </div>
 
         <!-- to submit -->
-        <div class="row pt-4">
+        <div class="row pt-4 offset-3">
             <button class="ml-3 btn btn-primary">Add New Post</button>
         </div>
     </form>

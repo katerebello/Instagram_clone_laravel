@@ -26,8 +26,18 @@
 
                 </div>
                 <div class="pl-3">
-                    <img src="/images/dot.png" alt="" style="width:8px;" class="pb-1">
-                    <a href="#">Follow</a>
+
+                    <!-- follow-link -->
+                    @can('view', $post->user->profile)
+                    <img src="/images/dot.png" alt="" style="width:8px;" class="">
+
+                    <div style="display: inline-block;">
+                        <follow-link user-id="{{ $post->user->id }}" follows="{{ $follows ?? '' }}">
+
+                        </follow-link>
+                    </div>
+                    @endcan
+
                 </div>
 
             </div>
@@ -39,7 +49,16 @@
                 </span>
                 <p class="pl-2">{{ $post->caption }}</p>
             </div>
+            
+            <!-- likes -->
+            <div>
+                <a href="#" style="color:black" >  
+                    <i class="far fa-heart fa-2x" id="icon"></i>
+                </a>
+            </div>
+
         </div>
     </div>
 </div>
+
 @endsection
