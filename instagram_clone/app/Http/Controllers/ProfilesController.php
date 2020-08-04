@@ -13,6 +13,7 @@ class ProfilesController extends Controller
     //
     public function index(User $user)
     {
+
         // dd($user);
         //dd will echo out and stop the remaining operation
         //dd(User::find($user)); 
@@ -79,6 +80,7 @@ class ProfilesController extends Controller
             $data,
             $imageArray  ?? []
         ));
+
 
         return redirect("/profile/{$user->id}");
     }
