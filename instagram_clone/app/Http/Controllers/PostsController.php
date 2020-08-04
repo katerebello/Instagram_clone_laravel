@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+
+use App\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Intervention\Image\Facades\Image;
 
 
@@ -14,7 +17,6 @@ class PostsController extends Controller
         $this->middleware('auth');//so every single route will require autharization
     }
 
-
     public function create()
     {
         return view('posts/create');
@@ -22,26 +24,41 @@ class PostsController extends Controller
 
     public function store()
     {
-       $data = request()->validate([
+
+        $data = request()->validate([
             'caption' => 'required',
-            'image' => ['required','image'],
+            'image' => ['required', 'image'],
         ]);
 
-       // dd(request('image')->store('uploads','public'));
-        $imagePath = (request('image')->store('uploads','public'));
+        $image_path = request('image')->store('uploads', 'public');
 
-        $image = Image::make(public_path("storage/{$imagePath}"))->fit(1200, 1200);
+        $image = Image::make(public_path("storage/{$image_path}"))->fit(1200, 1200);
         $image->save();
-      //  \App\Post::create($data);
 
-       // auth()->user()->posts()->create($data);//so that the user_id comes from the relation and auth is so that user must be signed in
-       auth()->user()->posts()->create([
-           'caption' => $data['caption'],
-           'image' => $imagePath,
-       ]);
+        auth()->user()->posts()->create([
+            'caption' => $data['caption'],
+            'image' => $image_path,
+        ]);
 
-       //dd(request()->all());//get all the data thats been passed to the request(just for checking dd is used)
-        return redirect('/profile/'. auth()->user()->id);
+        return redirect('/profile/' . auth()->user()->id);
+    }
+
+    public function show(\App\Post $post)
+    {
+        return view('posts/show', compact('post'));
+    }
+
+    public function index()
+    {
+        // grabs the users you are following
+        $users = auth()->user()->following()-> pluck('profiles.user_id');
+
+        // grabs the posts of the user you are following
+        // paginate is posts per page
+        // with('user') loads all the users while grabbing posts (more efficient)
+        $posts = Post::whereIn('user_id', $users)->with('user')->latest()->paginate(5);
+
+        return view('posts/index', compact('posts'));
     }
 
 }

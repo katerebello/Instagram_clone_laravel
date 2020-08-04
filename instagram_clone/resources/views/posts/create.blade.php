@@ -1,41 +1,50 @@
 @extends('layouts.app')
 
 @section('content')
-<form action="/p" enctype="multipart/form-data" method="post">
-    @csrf <!--csrf is used to authenticate that form before submitting the end point ie the add posts button in this case-->
-    <div class="container">
-        <div class="row">
-            <div class="col-8 offset-2">
+
+<div class="container">
+    <form action="/p" enctype="multipart/form-data" method="POST">
+
+        @csrf
+        <div class="row offset-3">
+            <div class="col-8 ">
+
                 <div class="row">
-                    <h1>Add New Post</h1>
+                    <h3 class="pt-4 ml-3 h3" style="font-weight: bold;">ADD NEW POST</h3>
                 </div>
+
                 <div class="form-group row">
-                    <label for="caption" class="col-md-4 col-form-label">Post caption</label>
-                        <input id="caption" 
-                           type="caption"
-                           class="form-control @error('caption') is-invalid @enderror"
-                           name="caption"
-                           value="{{ old('caption') }}"
-                           required autocomplete="caption">
+                    <label for="caption" class="col-md-4 col-form-label ">Post Caption</label>
 
-                            @error('caption')
-                                    <strong>{{ $errors->first('caption') }}</strong>
-                            @enderror
-                </div>
-         
-                <div class="row">
-                    <label for="image" class="col-md-4 col-form-label">Post image</label>
-                    <input type="file" class="form-control-file" id="image" name="image">
-                    @error('image')
-                            <strong>{{ $errors->first('image') }}</strong>
+                    <input id="caption" type="text" class="ml-3 form-control @error('caption')
+                     is-invalid @enderror" name="caption" caption="caption" value="{{ old('caption') }}" autocomplete="caption" autofocus>
+
+                    @error('caption')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
                     @enderror
-                </div> 
-                <div class="row  pt-2">
-                    <button class="btn btn-primary">Add New Post</button>
                 </div>
-
             </div>
         </div>
-    </div>
-</form>
+
+        <!-- image -->
+        <div class="row offset-3">
+            <label for="image" class="col-md-4 col-form-label ">Post Image</label>
+            <input type="file" class="ml-3 form-control-file" id="image" name="image">
+
+            @error('image')
+            <strong>{{ $message }}</strong>
+            @enderror
+
+        </div>
+
+        <!-- to submit -->
+        <div class="row pt-4 offset-3">
+            <button class="ml-3 btn btn-primary">Add New Post</button>
+        </div>
+    </form>
+
+</div>
 @endsection
+

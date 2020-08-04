@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\PostsController;
+use App\Mail\NewUserWelcomeMail;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,18 +16,41 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+
+Auth::routes();
+
+// welcome page
 Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+Route::get('/email', function(){
+    return new NewUserWelcomeMail();
+});
 
+// follow button
+Route::post('/follow/{user}', 'FollowController@store');
+
+// to create a post
 Route::get('/p/create', 'PostsController@create');
 
 Route::post('/p', 'PostsController@store');
 
+// home page(where we can see posts from the users we follow)
+Route::get('/home', 'PostsController@index');
 
+
+// to display a post when we click on it
+Route::get('/p/{post}', 'PostsController@show');
+
+
+// profile page 
 
 Route::get('/profile/{user}', 'ProfilesController@index')->name('profile.show');
 
+// edit profile
+Route::get('/profile/{user}/edit', 'ProfilesController@edit')->name('profile.edit');
 
+// update profile
+Route::patch('/profile/{user}', 'ProfilesController@update')->name('profile.update');
