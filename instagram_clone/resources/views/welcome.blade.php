@@ -15,7 +15,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <title>Laravel</title>
+    <title>CRK</title>
 
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
@@ -24,7 +24,7 @@
     <style>
         html,
         body {
-            background: url();
+            background: url();            
             color: #000;
             font-family: 'Nunito', sans-serif;
             font-weight: 200;
@@ -35,6 +35,7 @@
 
         .full-height {
             height: 100vh;
+            margin-left: 400px;  
         }
 
         .appname {
@@ -55,8 +56,8 @@
         .position,
         .imgblock {
             display: flex;
-            align-items: center;
-            justify-content: center;
+            align-items:center;
+            justify-content:center;
         }
 
         .btn {
@@ -102,10 +103,19 @@
         .imgblock>a {
             margin-left: 10px;
         }
+        #background{
+            position: absolute;
+            opacity: .9;
+            width: 600px;
+            top: 100px;
+            left: 170px;
+            z-index: -1;
+        }
     </style>
 </head>
 
 <body>
+    <img id="background" src="/svg/bg.svg" alt="">
     <div class="full-height">
         <div class="appname">
             <div class="name">Instagram</div>

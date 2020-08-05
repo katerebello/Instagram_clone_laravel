@@ -23,7 +23,7 @@ Vue.component('follow-button', require('./components/FollowButton.vue').default)
 
 Vue.component('follow-link', require('./components/FollowLink.vue').default);
 
-// Vue.component('likes', require('./components/Likes.vue').default);
+Vue.component('likes', require('./components/Likes.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

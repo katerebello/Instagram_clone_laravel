@@ -1,8 +1,6 @@
 <template>
     <div>
-        <!-- follow button -->
-        <!-- <button class="btn btn-primary ml-4 mt-1" @click="FollowUser" v-text="ButtonText"></button> -->
-
+        <!-- follow link in show.blade.php -->
         <a href="" role="button" class="pl-1" style="text-decoration:none" @click="FollowUser" v-text="ButtonText"></a>
     </div>
 </template>

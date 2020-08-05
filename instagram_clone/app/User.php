@@ -70,4 +70,10 @@ class User extends Authenticatable
         return $this->hasOne(Profile::class);
     }
 
+    // likes
+    // public function LikePost()
+    // {
+    //      return $this->belongsToMany(Post::class);
+    // }
+
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Post;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Intervention\Image\Facades\Image;
@@ -40,16 +41,20 @@ class PostsController extends Controller
         return redirect('/profile/' . auth()->user()->id);
     }
 
-    public function show(\App\Post $post)
+    public function show(Post $post)
     {
         return view('posts/show', compact('post'));
     }
 
-    public function index()
+    public function index(User $user)
     {
+        // $likes = (auth()->user()) ? auth()->user()->LikePost->contains($user->id): false;
+        // return view('posts/index', compact('posts', 'likes'));
+
+        
         // grabs the users you are following
         $users = auth()->user()->following()-> pluck('profiles.user_id');
-
+        
         // grabs the posts of the user you are following
         // paginate is posts per page
         // with('user') loads all the users while grabbing posts (more efficient)

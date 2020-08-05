@@ -51,11 +51,11 @@
             </div>
             
             <!-- likes -->
-            <div>
-                <a href="#" style="color:black" >  
-                    <i class="far fa-heart fa-2x" id="icon"></i>
-                </a>
-            </div>
+            <!-- <div>
+                <likes user-id="{{ $post->user->id}}" likes="{{ $likes ?? '' }}" ></likes>
+            </div> -->
+
+            
 
         </div>
     </div>
