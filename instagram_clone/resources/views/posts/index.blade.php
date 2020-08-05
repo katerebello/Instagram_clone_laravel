@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('profile')
+<h1>hey</h1>
+@endsection
+
 @section('content')
 
 <div class="container">
@@ -37,3 +41,4 @@
 
 </div>
 @endsection
+

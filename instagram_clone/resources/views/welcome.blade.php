@@ -119,7 +119,6 @@
     <div class="full-height">
         <div class="appname">
             <div class="name">Instagram</div>
-            <div class="subtitle">Sign up to see photos and videos from your friends.</div>
         </div>
 
 
@@ -127,8 +126,11 @@
             @if (Route::has('login'))
             <div class="links">
                 @auth
-                <a href="{{ url('/') }}">Home</a>
+
+                <a href=" /profile/{{ Auth::user()->profile->id }} " class="pt-5">Home</a>
                 @else
+                <div class="subtitle">Sign up to see photos and videos from your friends.</div>
+
                 <a class="btn btn-primary" role="button" href="{{ route('login') }}">Log In</a>
 
                 @if (Route::has('register'))
