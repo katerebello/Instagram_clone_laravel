@@ -4,6 +4,7 @@
 
 <div class="container">
     @foreach($posts as $post)
+    
     <div class="row">
 
         <!-- lhs -->
