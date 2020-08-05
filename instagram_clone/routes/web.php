@@ -49,7 +49,9 @@ Route::get('/home', 'PostsController@index');
 // to display a post when we click on it
 Route::get('/p/{post}', 'PostsController@show');
 
+
 // profile page 
+
 Route::get('/profile/{user}', 'ProfilesController@index')->name('profile.show');
 
 // edit profile

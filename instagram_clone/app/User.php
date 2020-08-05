@@ -38,6 +38,7 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
     
     protected static function boot()
     {
@@ -54,10 +55,12 @@ class User extends Authenticatable
         });
     }
 
+
     public function posts()
     {
         return $this->hasMany(Post::class)->orderBy('created_at', 'DESC');
     }
+
 
     // a user has many following(profiles)
     public function following()
@@ -70,10 +73,5 @@ class User extends Authenticatable
         return $this->hasOne(Profile::class);
     }
 
-    // likes
-    // public function LikePost()
-    // {
-    //      return $this->belongsToMany(Post::class);
-    // }
 
 }

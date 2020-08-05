@@ -3,6 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row">
+
         <div class="col-4 pt-4 pr-5 pl-5 pb-5">
             <img src="{{ $user->profile->profileImage() }}" style="border-radius:50%;" class="w-100">
         </div>
@@ -71,3 +72,4 @@
     </div>
 </div>
 @endsection
+

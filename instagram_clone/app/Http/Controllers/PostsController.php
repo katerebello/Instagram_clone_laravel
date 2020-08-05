@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Post;
 use App\User;
 use Illuminate\Http\Request;
@@ -11,9 +12,10 @@ use Intervention\Image\Facades\Image;
 
 class PostsController extends Controller
 {
-    public function __construct()
+    //so that only logged in users can have access to the create post form    
+    public function __construct() 
     {
-        $this->middleware('auth');
+        $this->middleware('auth');//so every single route will require autharization
     }
 
     public function create()
@@ -23,6 +25,7 @@ class PostsController extends Controller
 
     public function store()
     {
+
         $data = request()->validate([
             'caption' => 'required',
             'image' => ['required', 'image'],
@@ -62,4 +65,5 @@ class PostsController extends Controller
 
         return view('posts/index', compact('posts'));
     }
+
 }
