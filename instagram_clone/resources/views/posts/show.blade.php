@@ -13,6 +13,12 @@
         <!-- rhs -->
         <div class="col-4">
 
+        <!-- <div class="">
+                            <a href="/profile/{{ $post->user_id }}">
+                                <img src="{{ $post->user->profile->profileImage() }}" alt="" class="" style="border-radius:50%; width:45px">
+                            </a>
+                        </div> -->
+
             <div class="d-flex align-items-center">
                 <!-- profile-pic -->
                 <img src="{{ $post->user->profile->profileImage() }}" alt="" class="w-25" style="border-radius:50%;">
@@ -51,11 +57,11 @@
             </div>
             
             <!-- likes -->
-            <div>
-                <a href="#" style="color:black" >  
-                    <i class="far fa-heart fa-2x" id="icon"></i>
-                </a>
-            </div>
+            <!-- <div>
+                <likes user-id="{{ $post->user->id}}" likes="{{ $likes ?? '' }}" ></likes>
+            </div> -->
+
+            
 
         </div>
     </div>

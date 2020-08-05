@@ -25,6 +25,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// mail
 Route::get('/email', function(){
     return new NewUserWelcomeMail();
 });
@@ -32,8 +33,12 @@ Route::get('/email', function(){
 // follow button
 Route::post('/follow/{user}', 'FollowController@store');
 
+// likes button
+// Route::post('/like/{user}', 'LikesController@store' );
+
 // to create a post
 Route::get('/p/create', 'PostsController@create');
+
 
 Route::post('/p', 'PostsController@store');
 
