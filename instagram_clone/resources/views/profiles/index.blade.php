@@ -65,7 +65,7 @@
         @foreach($user->posts as $post)
         <div class="col-4 pb-4">
             <a href="/p/{{ $post->id }}">
-                <img src="/storage/{{ $post->image }}" style="object-fit: cover;" class="w-100 pt-4">
+                <img src="/storage/{{ $post->image }}" style="object-fit: cover; max-width:100%; height:auto;" class="w-100 pt-4">
             </a>
         </div>
         @endforeach
