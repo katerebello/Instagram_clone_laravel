@@ -30,7 +30,7 @@ class PostsController extends Controller
        // dd(request('image')->store('uploads','public'));
         $imagePath = (request('image')->store('uploads','public'));
 
-        $image = Image::make(public_path("storage/{$imagePath}"))->fit(1200, 1200);
+        $image = Image::make(public_path("storage/{$imagePath}"))->fit(1200, 1200);//uses the intervention pacakge installed
         $image->save();
       //  \App\Post::create($data);
 
@@ -42,6 +42,13 @@ class PostsController extends Controller
 
        //dd(request()->all());//get all the data thats been passed to the request(just for checking dd is used)
         return redirect('/profile/'. auth()->user()->id);
+    }
+
+    public function show(\App\Post $post){//if u use $post here and also in web.php u have a /{post} ie. the same name eg .post here u can get the the object post pf that image clicked by just adding(\App\Post $post) here as argument
+
+        //dd($post);
+        return view('posts/show',compact('post')); //compact does the  same as passing an array eg. [post=>$post]
+
     }
 
 }

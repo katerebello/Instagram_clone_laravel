@@ -19,6 +19,8 @@ class CreateProfilesTable extends Migration
             $table->string('title')->nullable();
             $table->text('description')->nullable();
             $table->string('url')->nullable();
+            $table->string('image')->nullable();
+
             $table->timestamps();
 
             $table->index('user_id');//just so u know user_id is a foreign key in your table
