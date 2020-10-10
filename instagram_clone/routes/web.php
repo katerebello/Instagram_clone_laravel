@@ -13,11 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Auth::routes();
+
+Route::post('/follow/{user}', 'FollowsController@store');
+
+Route::get('/', 'postscontroller@index');
 
 Route::get('/p/create', 'PostsController@create');
 
@@ -34,3 +35,5 @@ Route::patch('/profile/{user}', 'ProfilesController@update')->name('profile.upda
 
 
 
+
+Route::get('/home', 'HomeController@index')->name('home');

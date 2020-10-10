@@ -11,7 +11,7 @@
                 <div class="d-flex pb-3">
                     <h3>{{ $user->username }}</h3>
 
-                    <button class="btn btn-primary ml-4">follow</button>
+                    <follow-button user-id="{{ $user->id }}"></follow-button><!--will refer to the FollowButton.vue--><!--the user-id here is passed to the .vue file-->
                 </div>
 
                 @can ('update', $user->profile)
@@ -27,8 +27,8 @@
 
             <div class="d-flex">
             <div class="pr-5"><strong>{{$user->posts->count()}}</strong>Posts</div>
-            <div class="pr-5"><strong>24k</strong>followers</div>
-            <div><strong>45</strong>tags</div>
+            <div class="pr-5"><strong>{{ $user->profile->followers->count()}}</strong>followers</div>
+            <div><strong>{{ $user->following->count()}}</strong>following</div>
             </div>
             <div class="pt-3 font-weight-bold">{{ $user->profile->title }}</div>
             <div>{{ $user->profile->description }}</div>

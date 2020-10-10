@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Post;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
 
@@ -49,6 +50,14 @@ class PostsController extends Controller
         //dd($post);
         return view('posts/show',compact('post')); //compact does the  same as passing an array eg. [post=>$post]
 
+    }
+
+    public function index()
+    {
+        $users = auth()->user()->following->pluck('user_id');
+       // dd($users);
+        $posts = Post::whereIn('user_id', $users)->latest()->get();
+       return view('posts.index', compact('posts'));
     }
 
 }

@@ -18,8 +18,10 @@ class ProfilesController extends Controller
        //$user = User::findOrFail($user);//overwritten below using the compact method
        //$user = User::where('username', $user)-> first();
       //echo($user);
+      $follows = (auth()->user()) ? auth()->user()->following->contains($user->id) : false;
+      //dd($follows);
 
-       return view('profiles/index',compact('user'));
+       return view('profiles/index',compact('user','follows'));
 
     }
 
