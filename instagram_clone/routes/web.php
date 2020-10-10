@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+<<<<<<< HEAD
 
 
 Auth::routes();
@@ -24,12 +25,15 @@ Auth::routes();
 Route::get('/', function () {
     return view('welcome');
 });
+=======
+>>>>>>> insta-k
 
 // mail
 Route::get('/email', function(){
     return new NewUserWelcomeMail();
 });
 
+<<<<<<< HEAD
 // follow button
 Route::post('/follow/{user}', 'FollowController@store');
 
@@ -39,6 +43,15 @@ Route::post('/follow/{user}', 'FollowController@store');
 // to create a post
 Route::get('/p/create', 'PostsController@create');
 
+=======
+Route::post('/follow/{user}', 'FollowsController@store');
+
+Route::get('/', 'postscontroller@index');
+
+Route::get('/p/create', 'PostsController@create');
+
+Route::get('/p/{post}', 'PostsController@show');//to show a single image when v click on pne particular post
+>>>>>>> insta-k
 
 Route::post('/p', 'PostsController@store');
 
@@ -54,8 +67,18 @@ Route::get('/p/{post}', 'PostsController@show');
 
 Route::get('/profile/{user}', 'ProfilesController@index')->name('profile.show');
 
+<<<<<<< HEAD
 // edit profile
 Route::get('/profile/{user}/edit', 'ProfilesController@edit')->name('profile.edit');
 
 // update profile
 Route::patch('/profile/{user}', 'ProfilesController@update')->name('profile.update');
+=======
+Route::get('/profile/{user}/edit', 'ProfilesController@edit')->name('profile.edit');//this will get the form
+Route::patch('/profile/{user}', 'ProfilesController@update')->name('profile.update');//this will update the form
+
+
+
+
+Route::get('/home', 'HomeController@index')->name('home');
+>>>>>>> insta-k

@@ -26,7 +26,11 @@ class LoginController extends Controller
      *
      * @var string
      */
+<<<<<<< HEAD
     protected $redirectTo = '/home';
+=======
+    protected $redirectTo = '/';
+>>>>>>> insta-k
 
     /**
      * Create a new controller instance.

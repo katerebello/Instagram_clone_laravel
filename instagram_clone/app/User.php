@@ -39,8 +39,25 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+<<<<<<< HEAD
     
     protected static function boot()
+=======
+        //this boot method is extented by adding this so that the profile is created as we create a user
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::created(function($user) {
+            $user->profile()->create([
+                'title' => $user->username, //just set title as username bydefault at first 
+            ]);
+        });
+
+    }
+
+    public function profile()
+>>>>>>> insta-k
     {
         parent::boot();
 
@@ -62,11 +79,16 @@ class User extends Authenticatable
     }
 
 
+<<<<<<< HEAD
     // a user has many following(profiles)
+=======
+    //here users can follow many profiles ie.following
+>>>>>>> insta-k
     public function following()
     {
         return $this->belongsToMany(Profile::class);
     }
+<<<<<<< HEAD
 
     public function profile()
     {
@@ -74,4 +96,6 @@ class User extends Authenticatable
     }
 
 
+=======
+>>>>>>> insta-k
 }

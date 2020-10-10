@@ -21,10 +21,13 @@ window.Vue = require('vue');
 
 Vue.component('follow-button', require('./components/FollowButton.vue').default);
 
+<<<<<<< HEAD
 Vue.component('follow-link', require('./components/FollowLink.vue').default);
 
 Vue.component('likes', require('./components/Likes.vue').default);
 
+=======
+>>>>>>> insta-k
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application

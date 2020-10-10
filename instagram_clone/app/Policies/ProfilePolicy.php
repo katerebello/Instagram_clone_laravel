@@ -30,8 +30,12 @@ class ProfilePolicy
      */
     public function view(User $user, Profile $profile)
     {
+<<<<<<< HEAD
         return !($user->id == $profile->user_id);
 
+=======
+        //
+>>>>>>> insta-k
     }
 
     /**
