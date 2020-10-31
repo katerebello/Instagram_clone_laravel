@@ -45,7 +45,7 @@ class PostsController extends Controller
         return redirect('/profile/'. auth()->user()->id);
     }
 
-    public function show(\App\Post $post){//if u use $post here and also in web.php u have a /{post} ie. the same name eg .post here u can get the the object post pf that image clicked by just adding(\App\Post $post) here as argument
+    public function show(\App\Post $post){//if u use $post here and also in web.php u have a /{post} ie. the same name eg .post here u can get the  object post of that image clicked by just adding(\App\Post $post) here as argument
 
         //dd($post);
         return view('posts/show',compact('post')); //compact does the  same as passing an array eg. [post=>$post]

@@ -12,9 +12,9 @@ class ProfilesController extends Controller
     //
     public function index(User $user) // User is actually /Post/user but we have imported at top ie.Post/User namespace so thats considered
     {
-       // dd($user);//dd will echo out and stop the remaining operation
+       //dd($user);//dd will echo out and stop the remaining operation
        //dd(User::find($user)); 
-      // echo($user);
+      //echo($user);
        //$user = User::findOrFail($user);//overwritten below using the compact method
        //$user = User::where('username', $user)-> first();
       //echo($user);

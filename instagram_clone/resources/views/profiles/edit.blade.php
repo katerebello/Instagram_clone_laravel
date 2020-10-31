@@ -5,7 +5,7 @@
 <form action="/profile/{{ $user->id }}" enctype="multipart/form-data" method="post">
     @csrf <!--csrf is used to authenticate that form before submitting the end point ie the add posts button in this case-->
     
-    <!--above in form attributes the method should be get or post so actually its been overwritten with put or patch as there put and patch are not supported-->
+    <!--above in form at tributes the method should be get or post so actually its been overwritten with put or patch as there put and patch are not supported-->
     @method('PATCH')
 
     <div class="container">
