@@ -1,12 +1,10 @@
 @component('mail::message')
-# Introduction
+# Welcome To InstaCRK
 
-The body of your message.
+We are a Team of two working on our project Instagram-clone!ThankYou for Joining IN!
 
-@component('mail::button', ['url' => ''])
-Button Text
-@endcomponent
 
-Thanks,<br>
+
+Hope You Like Our app:)<br>
 {{ config('app.name') }}
 @endcomponent

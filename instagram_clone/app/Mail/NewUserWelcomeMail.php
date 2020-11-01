@@ -31,3 +31,4 @@ class NewUserWelcomeMail extends Mailable
         return $this->markdown('emails.welcome-email');
     }
 }
+
