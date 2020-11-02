@@ -73,5 +73,10 @@ class User extends Authenticatable
         return $this->hasOne(Profile::class);
     }
 
+    // public function all_users()
+    // {
+    //     $users = User::where('id', '!=', auth()->id())->get();
+    //     dd($users);
+    // }
 
 }

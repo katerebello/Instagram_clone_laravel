@@ -49,6 +49,7 @@
         }
 
         .subtitle {
+            text-align: center;
             margin-bottom: 20px;
             margin-top: 30px;
         }
@@ -92,7 +93,7 @@
         .download:hover,
         .img:hover {
             background-color: transperent;
-            box-shadow: 5px 10px 8px 2px #888888;
+            /* box-shadow: 5px 2px 2px 2px #888888; */
         }
 
         .app {
@@ -128,13 +129,16 @@
                 @auth
 
                 <a href=" /profile/{{ Auth::user()->profile->id }} " class="pt-5">Home</a>
+                <a href="/all " class="pt-2">Seach Other Profiles</a>
+
+                <!-- <a href=" /profile/{user}" class="pt-5">Home</a> -->
                 @else
                 <div class="subtitle">Sign up to see photos and videos from your friends.</div>
 
                 <a class="btn btn-primary" role="button" href="{{ route('login') }}">Log In</a>
 
                 @if (Route::has('register'))
-                <a class="btn btn-primary" role="button" href="{{ route('register') }}">Register</a>
+                    <a class="btn btn-primary" role="button" href="{{ route('register') }}">Register</a>
                 @endif
                 @endauth
             </div>

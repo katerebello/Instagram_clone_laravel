@@ -45,13 +45,10 @@ Route::post('/p', 'PostsController@store');
 // home page(where we can see posts from the users we follow)
 Route::get('/home', 'PostsController@index');
 
-
 // to display a post when we click on it
 Route::get('/p/{post}', 'PostsController@show');
 
-
 // profile page 
-
 Route::get('/profile/{user}', 'ProfilesController@index')->name('profile.show');
 
 // edit profile
@@ -59,3 +56,6 @@ Route::get('/profile/{user}/edit', 'ProfilesController@edit')->name('profile.edi
 
 // update profile
 Route::patch('/profile/{user}', 'ProfilesController@update')->name('profile.update');
+
+// all users
+Route::get('/all', 'AllUsersController@show');
