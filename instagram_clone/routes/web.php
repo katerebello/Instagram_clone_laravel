@@ -43,3 +43,7 @@ Route::post('/search','ProfilesController@search');
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/explore','PostsController@allposts');
+
+Route::get('/profile/{user}/followers','FollowsController@viewfollowers');
+
+Route::get('/profile/{user}/following','FollowsController@viewfollowing');

@@ -26,11 +26,11 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-6 offset-3 pt-2 pb-3 d-flex">
-           <input type="submit" class="h-60 like" value="LIKE">
+        <div class="col-6 offset-3 pt-2 pb-3 align-items-center">
+            <like-button></like-button><!--this will refer to the actual component u added in app.js and the like-button.vue-->
             <p>
-                <span class="font-weight-bold ">
-                    <a href="/profile/{{$post->user->id}}" class="text-dark">{{$post->user->username}}</a>
+                <span class="font-weight-bold h6 ">
+                    <a  href="/profile/{{$post->user->id}}" class="text-dark">{{$post->user->username}}</a>
                 </span>
                 {{$post->caption}}
             </p>
