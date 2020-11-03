@@ -60,4 +60,12 @@ class PostsController extends Controller
        return view('posts.index', compact('posts'));
     }
 
+    public function allposts()
+    {
+        $posts = Post::all();
+        //dd($posts);
+        return view('posts.allposts',compact('posts'));
+    }
+
+
 }

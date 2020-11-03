@@ -36,7 +36,10 @@ Route::get('/profile/{user}', 'ProfilesController@index')->name('profile.show');
 Route::get('/profile/{user}/edit', 'ProfilesController@edit')->name('profile.edit');//this will get the form
 Route::patch('/profile/{user}', 'ProfilesController@update')->name('profile.update');//this will update the form
 
+Route::post('/search','ProfilesController@search');
 
 
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/explore','PostsController@allposts');

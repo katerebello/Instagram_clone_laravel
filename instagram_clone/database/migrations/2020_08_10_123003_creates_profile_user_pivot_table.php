@@ -17,10 +17,10 @@ class CreatesProfileUserPivotTable extends Migration
             $table->id();
             $table->unsignedBigInteger('profile_id');//pivot table is used when there is many to many relationship betn the entities here User and Profile table
             $table->unsignedBigInteger('user_id');
-            $table->timestamps();
+            $table->timestamps(); 
         });
     }
-
+    
     /**
      * Reverse the migrations.
      *

@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -16,8 +17,15 @@
 
                     {{ __('You are logged in!') }}
                 </div>
+               
+
             </div>
         </div>
     </div>
 </div>
+    @foreach($users as $user)
+        <div class="text-center">
+        <a href="profile/{{$user->id}}">{{$user->username}}</a>
+        </div>
+    @endforeach
 @endsection

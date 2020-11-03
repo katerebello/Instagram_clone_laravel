@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers;
 use Intervention\Image\Facades\Image;
-
-
 use App\User;
 use Illuminate\Http\Request;
 
@@ -29,6 +27,24 @@ class ProfilesController extends Controller
         //dd($user);
         $this->authorize('update', $user->profile);//authorized the statement we wrote in profilepolicy
         return view('profiles/edit',compact('user'));
+    }
+
+    public function search(User $user,Request $request){
+        //dd($user->all());
+        $users = $user->all();
+        $search = $request->input('q');
+        if($search != ''){
+            $found = $user::where('username','LIKE','%'.$search.'%')->get();
+            //return $found->count();
+            //dd($found);
+            return view ('search',compact('found'));
+        }
+        else{
+            return('Not FOUND');
+        }
+        //dd($users);
+        //dd($search);
+        //return view ('search',compact('users'));
     }
 
     public function update(User  $user)

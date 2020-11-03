@@ -49751,6 +49751,9 @@ Vue.component('follow-button', __webpack_require__(/*! ./components/FollowButton
 var app = new Vue({
   el: '#app'
 });
+$('.like').on('click', function (event) {
+  console.log(event);
+});
 
 /***/ }),
 
@@ -49893,3 +49896,8 @@ module.exports = __webpack_require__(/*! C:\Users\Kate\Desktop\laravel_project\i
 /***/ })
 
 /******/ });
+
+$('.like').on('click',function(event){
+    console.log(event);
+    $like = (event.target!=null);//returns true or false 
+});
