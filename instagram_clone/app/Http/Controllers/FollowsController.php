@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 Use App\User;
 use Illuminate\Http\Request;
 
@@ -33,4 +32,5 @@ class FollowsController extends Controller
         return view('profiles/following',compact('followings'));
     }
 }
+
 

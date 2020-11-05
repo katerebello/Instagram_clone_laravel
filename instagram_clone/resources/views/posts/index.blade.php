@@ -27,7 +27,7 @@
     </div>
     <div class="row">
         <div class="col-6 offset-3 pt-2 pb-3 align-items-center">
-            <like-button></like-button><!--this will refer to the actual component u added in app.js and the like-button.vue-->
+            <like-button user-id="{{ $post->user->id }}" post-id="{{$post->id}}"></like-button> <!--this will refer to the actual component u added in app.js and the like-button.vue-->
             <p>
                 <span class="font-weight-bold h6 ">
                     <a  href="/profile/{{$post->user->id}}" class="text-dark">{{$post->user->username}}</a>

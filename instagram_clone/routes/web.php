@@ -19,6 +19,9 @@ Auth::routes();
 Route::get('/email',function(){
     return new NewUserWelcomeMail();
 });*/
+
+Route::post('like/{user}/{postid}','likeController@store');
+
 Route::post('/follow/{user}', 'FollowsController@store');
 
 Route::get('/', 'postscontroller@index');

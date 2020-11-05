@@ -75,4 +75,11 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Profile::class);
     }
+
+    //a user can like many posts
+    public function like()
+    {
+        return $this->belongsToMany(Post::class);
+    }
+    
 }
