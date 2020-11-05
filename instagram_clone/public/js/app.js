@@ -1939,7 +1939,7 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   computed: {
-    ButtonText: function ButtonText() {
+    buttonText: function buttonText() {
       return this.status ? 'Unfollow' : 'Follow';
     }
   }
@@ -37573,7 +37573,7 @@ var render = function() {
   return _c("div", { staticClass: "container" }, [
     _c("button", {
       staticClass: "btn btn-primary ml-4",
-      domProps: { textContent: _vm._s(_vm.ButtonText) },
+      domProps: { textContent: _vm._s(_vm.buttonText) },
       on: { click: _vm.followUser }
     })
   ])

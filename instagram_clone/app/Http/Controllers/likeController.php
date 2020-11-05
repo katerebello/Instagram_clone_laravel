@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\User;
 use Illuminate\Http\Request;
+use App\post;
 
 class likeController extends Controller
 {
@@ -12,9 +13,9 @@ class likeController extends Controller
         $this->middleware('auth');
     }
 
-    public function store(User $user)
-    {
-        $data = auth()->user()->like()->toggle($user->posts);
+    public function store(User $user,Post $post)
+    {   
+        $data = auth()->user()->like()->toggle($user->posts->find($post->id));
         return $data;
     }
 }

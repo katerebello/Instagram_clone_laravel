@@ -20,7 +20,7 @@ Route::get('/email',function(){
     return new NewUserWelcomeMail();
 });*/
 
-Route::post('like/{user}/{postid}','likeController@store');
+Route::post('like/{user}/{post}','likeController@store');
 
 Route::post('/follow/{user}', 'FollowsController@store');
 
