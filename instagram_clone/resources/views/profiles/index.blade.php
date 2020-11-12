@@ -10,7 +10,6 @@
             <div class="d-flex justify-content-between align-items-baseline">
                 <div class="d-flex pb-3">
                     <h3>{{ $user->username }}</h3>
-
                     <follow-button user-id="{{ $user->id }}" follows="{{ $follows }}"></follow-button><!--will refer to the FollowButton.vue--><!--the user-id here is passed to the .vue file-->
                 </div>
 

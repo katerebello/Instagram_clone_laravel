@@ -52,12 +52,15 @@ class PostsController extends Controller
 
     }
 
-    public function index()
-    {
+    public function index(Post $post)
+    {   
+
         $users = auth()->user()->following->pluck('user_id');
         //dd($users);
+        $likes = (auth()->user())? auth()->user()->like->contains($post->id) : false;
+        //dd($likes);
         $posts = Post::whereIn('user_id', $users)->latest()->get();
-       return view('posts.index', compact('posts'));
+       return view('posts.index', compact('posts','likes'));
     }
 
     public function allposts()
