@@ -6,7 +6,6 @@ body {
     font-weight: 200;
     height: 100vh;
     margin: 0;
-    overflow-y: hidden;
 }
 
 .full-height {
@@ -37,7 +36,7 @@ body {
     justify-content: center;
 }
 
-.btn {
+.login, .register {
     border-radius: 15px;
     width: 400px;
     margin-bottom: 20px;
@@ -150,3 +149,4 @@ input:checked+.slider:before {
 .slider.round:before {
     border-radius: 50%;
 }
+

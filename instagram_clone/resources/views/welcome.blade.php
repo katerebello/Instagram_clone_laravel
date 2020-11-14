@@ -23,7 +23,7 @@
 
 </head>
 
-<body>
+<body style="overflow-y: hidden;">
     <img id="background" src="/svg/bg.svg" alt="">
     <div class="full-height">
         <div class="appname">
@@ -41,10 +41,10 @@
                 @else
                 <div class="subtitle">Sign up to see photos and videos from your friends.</div>
 
-                <a class="btn btn-primary" role="button" href="{{ route('login') }}">Log In</a>
+                <a class="btn btn-primary login" role="button" href="{{ route('login') }}">Log In</a>
 
                 @if (Route::has('register'))
-                <a class="btn btn-primary" role="button" href="{{ route('register') }}">Register</a>
+                <a class="btn btn-primary register" role="button" href="{{ route('register') }}">Register</a>
                 @endif
                 @endauth
             </div>
