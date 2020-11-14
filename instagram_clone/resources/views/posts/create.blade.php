@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="container">
+<div class="container card p-5 mt-5">
     <form action="/p" enctype="multipart/form-data" method="POST">
 
         @csrf

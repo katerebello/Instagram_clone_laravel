@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container" style="overflow: auto;">
+<div class="container card p-5 mt-5" style="overflow: auto;">
     <form action="/profile/{{ $user->id }}" enctype="multipart/form-data" method="POST">
         @csrf
         @method('PATCH')
@@ -76,7 +76,7 @@
 
         <!-- to submit -->
         <div class="row pt-4 offset-3">
-            <button class="ml-3 btn btn-primary">SAVE PROFILE</button>
+            <button class="ml-3 btn btn-primary">Save Profile</button>
         </div>
     </form>
 </div>
