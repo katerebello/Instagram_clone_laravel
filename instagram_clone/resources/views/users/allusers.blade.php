@@ -1,10 +1,9 @@
 @extends('layouts.app')
 @section('content')
 
-<!-- <h1>{{ $all_profiles }}</h1> -->
-    <div class="container">
-        <div class="row">
-            <div class="col-3">
+    <div class="container card mt-5 mb-5">
+        <div class="row d-flex justify-content-center">
+            <div class="col-2">
                 <ol>
                 @foreach($all_profiles as $all_profile)
                     <li>
@@ -15,7 +14,7 @@
                 @endforeach
                 </ol>
             </div>
-            <div class="col-9">
+            <div class="col-4">
                 <ol>
                     @foreach($all_users as $all_user)
                         <li class="mt-3 mb-5 p-2">
