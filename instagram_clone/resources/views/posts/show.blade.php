@@ -12,20 +12,18 @@
 
         <!-- rhs -->
         <div class="col-4">
-        <div class="d-flex align-items-center">
-            <!-- profile-pic -->
-            <img src="{{ $post->user->profile->profileImage() }}" alt="" class="w-25" style="border-radius:50%;">
+            <div class="d-flex align-items-center">
+                <!-- profile-pic -->
+                <img src="{{ $post->user->profile->profileImage() }}" alt="" class="w-25" style="border-radius:50%;">
 
-            <div class="pl-4">
-                <div class="font-weight-bold h3">
-                    <a href="/profile/{{ $post->user_id }}" style="color:black;text-decoration:none;">
-                        {{ $post->user->username }}
-                    </a>
+                <div class="pl-4">
+                    <div class="font-weight-bold h3">
+                        <a href="/profile/{{ $post->user_id }}" style="color:black;text-decoration:none;">
+                            {{ $post->user->username }}
+                        </a>
+                    </div>
                 </div>
-
             </div>
-        </div>
-
             <hr>
             <div class="d-flex ">
                 <span class="font-weight-bold h5">
@@ -33,14 +31,6 @@
                 </span>
                 <p class="pl-2">{{ $post->caption }}</p>
             </div>
-            
-            <!-- likes -->
-            <!-- <div>
-                <likes user-id="{{ $post->user->id}}" likes="{{ $likes ?? '' }}" ></likes>
-            </div> -->
-
-            
-
         </div>
     </div>
 </div>
