@@ -61,7 +61,6 @@ class User extends Authenticatable
         return $this->hasMany(Post::class)->orderBy('created_at', 'DESC');
     }
 
-
     // a user has many following(profiles)
     public function following()
     {
@@ -72,11 +71,5 @@ class User extends Authenticatable
     {
         return $this->hasOne(Profile::class);
     }
-
-    // public function all_users()
-    // {
-    //     $users = User::where('id', '!=', auth()->id())->get();
-    //     dd($users);
-    // }
 
 }

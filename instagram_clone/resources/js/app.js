@@ -21,8 +21,6 @@ window.Vue = require('vue');
 
 Vue.component('follow-button', require('./components/FollowButton.vue').default);
 
-Vue.component('follow-link', require('./components/FollowLink.vue').default);
-
 Vue.component('likes', require('./components/Likes.vue').default);
 
 /**

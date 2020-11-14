@@ -8,9 +8,8 @@
 
 <div class="container">
     @foreach($posts as $post)
+    <!-- lhs -->
     <div class="row">
-
-        <!-- lhs -->
         <div class="col-7 offset-3">
             <a href="/profile/{{ $post->user->id }}">
                 <img src="/storage/{{ $post->image }}" alt="" class="w-75">

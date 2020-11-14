@@ -59,3 +59,8 @@ Route::patch('/profile/{user}', 'ProfilesController@update')->name('profile.upda
 
 // all users
 Route::get('/all', 'AllUsersController@show');
+
+//settings
+Route::get('/settings', function(){
+    return view('settings');
+});
