@@ -1963,15 +1963,28 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['userId', 'postId'],
+  props: ['userId', 'postId', 'likes'],
   mounted: function mounted() {
     console.log('Component mounted.');
   },
+  data: function data() {
+    return {
+      status: this.likes
+    };
+  },
   methods: {
     likePost: function likePost() {
+      var _this = this;
+
       axios.post('/like/' + this.userId + '/' + this.postId).then(function (response) {
+        _this.status = !_this.status;
         console.log(response.data);
       });
+    }
+  },
+  computed: {
+    buttonText: function buttonText() {
+      return this.status ? 'Dislike' : 'Like';
     }
   }
 });
@@ -37601,11 +37614,11 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c(
-      "button",
-      { staticClass: "btn btn-primary mr-1", on: { click: _vm.likePost } },
-      [_vm._v("Like")]
-    )
+    _c("button", {
+      staticClass: "btn btn-primary mr-1",
+      domProps: { textContent: _vm._s(_vm.buttonText) },
+      on: { click: _vm.likePost }
+    })
   ])
 }
 var staticRenderFns = []
