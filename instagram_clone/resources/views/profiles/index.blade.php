@@ -16,9 +16,10 @@
                     <!-- this will create a view for us in FollowButton.vue -->
                     <!-- give the user id through property -->
 
+                    <!-- @can('view', $user->profile)
+                        <follow-button user-id="{{ $user->id }}" follows="{{ $follows }}"></follow-button>
+                    @endcan -->
                     <follow-button user-id="{{ $user->id }}" follows="{{ $follows }}"></follow-button>
-    
-                    <!-- <follow-button user-id="{{ $user->id }}" follows="{{ $follows }}"></follow-button> -->
 
                 </div>
 
