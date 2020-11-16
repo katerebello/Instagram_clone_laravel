@@ -15,9 +15,11 @@
                     <!-- follow button -->
                     <!-- this will create a view for us in FollowButton.vue -->
                     <!-- give the user id through property -->
-                    @can('view', $user->profile)
+
                     <follow-button user-id="{{ $user->id }}" follows="{{ $follows }}"></follow-button>
-                    @endcan
+    
+                    <!-- <follow-button user-id="{{ $user->id }}" follows="{{ $follows }}"></follow-button> -->
+
                 </div>
 
                 <!-- if the user has the authorization to update the only the user will be allowed to add posts -->
@@ -31,15 +33,15 @@
             </div>
           
             <div class="d-flex">
-                <div class="pr-4"> 
-                    <a href="#posts" style="text-decoration: none; color:black;"><strong class="pr-2">{{$user->posts->count()}}</strong>Posts</a> 
+                <div class="pr-3"> 
+                    <a href="#posts" style="text-decoration: none; color:black;"><strong class="pr-2">{{ $postsCount }}</strong>Posts</a> 
                 </div>
-                <div class="pr-4"> 
+                <div class="pr-3"> 
                     <a href="/profile/{{ $user->id }}/followers" style="text-decoration: none; color:black;"><strong class="pr-2">
                         {{ $user->profile->followers->count()}}</strong>followers
                     </a> 
                 </div>
-                <div class="pr-4">
+                <div class="pr-3">
                     <a href="/profile/{{ $user->id }}/following" style="text-decoration: none; color:black;"><strong class="pr-2">  
                         {{ $user->following->count()}}</strong>following
                     </a> 
@@ -62,7 +64,7 @@
             
             <!-- url -->
             <div>
-                <a href="{{ $user->profile->url }}">{{ $user->profile->url ?? 'N/A' }}</a>
+                <a href="{{ $user->profile->url }}" style="text-decoration:none;">{{ $user->profile->url ?? 'N/A' }}</a>
             </div>
         </div>
     </div>

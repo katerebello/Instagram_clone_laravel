@@ -56,7 +56,9 @@
                         @else
 
                         <div class="">
-                            <a href="/explore"><img src="https://img.icons8.com/ios-filled/30/000000/compass--v2.png"/></a>
+                            <a href="/explore" title="Explore" class="mr-3">
+                                <img src="https://img.icons8.com/ios-filled/40/000000/compass--v2.png"/>
+                            </a>
                             <a href="/profile/{{ Auth::user()->id }}">
                                 <img src="{{ Auth::user()->profile->profileImage() }}" alt="" class="" style="border-radius:50%; width:40px">
                             </a>

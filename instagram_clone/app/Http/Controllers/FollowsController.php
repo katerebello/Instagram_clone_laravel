@@ -13,8 +13,10 @@ class FollowsController extends Controller
 
     public function store(User $user)
     {
+        
         return auth()->user()->following()->toggle($user->profile);
     }
+
     public function viewfollowers(User $user)
     {
         //dd($user->profile->followers);

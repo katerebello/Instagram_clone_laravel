@@ -27,6 +27,7 @@ Route::get('/email',function(){
 Route::get('/',function(){
     return view('welcome');
 });
+
 Route::post('like/{user}/{post}','likeController@store');
 
 Route::post('/follow/{user}', 'FollowsController@store');
@@ -34,19 +35,13 @@ Route::post('/follow/{user}', 'FollowsController@store');
 // home page(where we can see posts from the users we follow)
 Route::get('/home', 'postscontroller@index');
 
-// follow button
-Route::post('/follow/{user}', 'FollowController@store');
-
-// likes button
-// Route::post('/like/{user}', 'LikesController@store' );
-
 // to create a post
 Route::get('/p/create', 'PostsController@create');
 
-Route::get('/p/{post}', 'PostsController@show');//to show a single image when v click on pne particular post
+//to show a single image when v click on one particular post
+Route::get('/p/{post}', 'PostsController@show');
 
 Route::post('/p', 'PostsController@store');
-
 
 // to display a post when we click on it
 Route::get('/p/{post}', 'PostsController@show');
@@ -55,19 +50,18 @@ Route::get('/p/{post}', 'PostsController@show');
 Route::get('/profile/{user}', 'ProfilesController@index')->name('profile.show');
 
 Route::get('/profile/{user}/edit', 'ProfilesController@edit')->name('profile.edit');//this will get the form
+
 Route::patch('/profile/{user}', 'ProfilesController@update')->name('profile.update');//this will update the form
 
 Route::post('/search','ProfilesController@search');
 
-
-
 //Route::get('/home', 'HomeController@index')->name('home');
-
 Route::get('/explore','PostsController@allposts');
 
 Route::get('/profile/{user}/followers','FollowsController@viewfollowers');
 
 Route::get('/profile/{user}/following','FollowsController@viewfollowing');
+
 // update profile
 Route::patch('/profile/{user}', 'ProfilesController@update')->name('profile.update');
 
