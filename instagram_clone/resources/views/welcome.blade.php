@@ -128,6 +128,8 @@
                 @auth
 
                 <a href=" /profile/{{ Auth::user()->profile->id }} " class="pt-5">Home</a>
+                <a href=" /profile/{{ Auth::user()->profile->id }} " class="pt-2">My Profile</a>
+                <a href="/all " class="pt-2">Seach Other Profiles</a>
                 @else
                 <div class="subtitle">Sign up to see photos and videos from your friends.</div>
 

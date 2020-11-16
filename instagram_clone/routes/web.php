@@ -24,11 +24,15 @@ Route::get('/email',function(){
     return new NewUserWelcomeMail();
 });*/
 
+Route::get('/',function(){
+    return view('welcome');
+});
 Route::post('like/{user}/{post}','likeController@store');
 
 Route::post('/follow/{user}', 'FollowsController@store');
 
-Route::get('/', 'postscontroller@index');
+// home page(where we can see posts from the users we follow)
+Route::get('/home', 'postscontroller@index');
 
 // follow button
 Route::post('/follow/{user}', 'FollowController@store');
@@ -43,8 +47,6 @@ Route::get('/p/{post}', 'PostsController@show');//to show a single image when v 
 
 Route::post('/p', 'PostsController@store');
 
-// home page(where we can see posts from the users we follow)
-Route::get('/home', 'PostsController@index');
 
 
 // to display a post when we click on it
