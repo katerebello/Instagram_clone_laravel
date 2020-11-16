@@ -9,13 +9,12 @@
         <div class="col-5 p-5">
             <div class="d-flex align-items-center">
                 <div>
-                    <img src="{{ $post->user->profile->profileImage() }}" class=" rounded-circle img-fluid pr-3" style="max-width:50px" alt="">
+                    <img src="{{ $post->user->profile->profileImage() }}" class=" rounded-circle img-fluid" style="max-width:50px" alt="">
                 </div>
                 <div>
                     <div class="font-weight-bold">
-                        <a href="/profile/{{$post->user->id}}" ><span class="text-dark">{{$post->user->username}}</span></a>
+                        <a href="/profile/{{$post->user->id}}" ><span class="text-dark ml-3">{{$post->user->username}}</span></a>
                         
-                        <a href="#" class="pl-3">follow</a>
                     </div>
                 </div>
             </div>

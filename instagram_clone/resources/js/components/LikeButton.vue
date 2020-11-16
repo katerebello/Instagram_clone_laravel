@@ -1,6 +1,9 @@
 <template>
     <div class="container">
-        <button class="btn btn-primary mr-1" @click="likePost" v-text="buttonText"></button>
+        <i class="fas fa-heart" @click="likePost" :class=" { changeColor: this.status }"></i>
+        
+        
+        <!-- <button class="btn btn-primary mr-1" @click="likePost" v-text="buttonText"></button> -->
     </div>
 </template>
 
@@ -17,6 +20,7 @@
                 status:this.likes,
             }
         },
+        
 
         methods: {
             likePost(){
@@ -24,15 +28,30 @@
                     .then(response=>{
                         this.status = !this.status;
                         console.log(response.data);
-                    });
+                    })
+                    .catch(errors => {
+                        if (errors.response.status == 401){
+                            window.location = '/login';
+                        }
+                    })
             }
         },
 
-        computed: {
-            buttonText(){
-                return (this.status) ? 'Dislike' : 'Like';
-            }
-        }
+        // computed: {
+        //     buttonText(){
+        //         return (this.status) ? 'Dislike' : 'Like';
+        //     }
+            
+        // }
     }
         
 </script>
+<style>
+    .changeColor{
+        color: red;
+    }
+    .fas{
+        font-size: 22px;
+        margin-left:-14px;
+    }
+</style>
