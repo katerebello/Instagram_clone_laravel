@@ -24,15 +24,15 @@
           
             <div class="d-flex">
                 <div class="pr-3"> 
-                    <a href="#posts" style="text-decoration: none; color:black;"><strong class="pr-1">{{ $postsCount }}</strong>Posts</a> 
+                    <a href="#posts" class="text-decoration-none text-dark"><strong class="pr-1">{{ $postsCount }}</strong>Posts</a> 
                 </div>
                 <div class="pr-3"> 
-                    <a href="/profile/{{ $user->id }}/followers" style="text-decoration: none; color:black;"><strong class="pr-1">
+                    <a href="/profile/{{ $user->id }}/followers" class="text-decoration-none text-dark"><strong class="pr-1">
                         {{ $user->profile->followers->count()}}</strong>followers
                     </a> 
                 </div>
                 <div class="pr-3">
-                    <a href="/profile/{{ $user->id }}/following" style="text-decoration: none; color:black;"><strong class="pr-1">  
+                    <a href="/profile/{{ $user->id }}/following" class="text-decoration-none text-dark"><strong class="pr-1">  
                         {{ $user->following->count()}}</strong>following
                     </a> 
                 </div>
@@ -44,7 +44,7 @@
 
             <div class="pt-3 font-weight-bold">{{ $user->profile->title }}</div>
             <div>{{ $user->profile->description }}</div>
-            <a href="{{ $user->profile->url }}" style="text-decoration:none">{{ $user->profile->url ?? 'N/A' }}
+            <a href="{{ $user->profile->url }}" class="text-decoration-none text-dark">{{ $user->profile->url ?? 'N/A' }}
             </a>
         </div>
     </div>
