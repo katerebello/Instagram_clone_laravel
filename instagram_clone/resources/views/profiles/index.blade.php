@@ -55,7 +55,7 @@
             @endcan
 
             <!-- title -->
-            <div class="pt-3 font-weight-bold">{{ $user->profile->title }}</div>
+            <div class="font-weight-bold">{{ $user->profile->title }}</div>
 
             <!-- description -->
             <div>{{ $user->profile->description }}</div>
