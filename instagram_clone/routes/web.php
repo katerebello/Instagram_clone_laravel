@@ -48,13 +48,10 @@ Route::get('/p/{post}', 'PostsController@show');//to show a single image when v 
 Route::post('/p', 'PostsController@store');
 
 
-
 // to display a post when we click on it
 Route::get('/p/{post}', 'PostsController@show');
 
-
 // profile page 
-
 Route::get('/profile/{user}', 'ProfilesController@index')->name('profile.show');
 
 Route::get('/profile/{user}/edit', 'ProfilesController@edit')->name('profile.edit');//this will get the form
@@ -64,10 +61,20 @@ Route::post('/search','ProfilesController@search');
 
 
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/explore','PostsController@allposts');
 
 Route::get('/profile/{user}/followers','FollowsController@viewfollowers');
 
 Route::get('/profile/{user}/following','FollowsController@viewfollowing');
+// update profile
+Route::patch('/profile/{user}', 'ProfilesController@update')->name('profile.update');
+
+// all users
+Route::get('/all', 'AllUsersController@show');
+
+//settings
+Route::get('/settings', function(){
+    return view('settings');
+});

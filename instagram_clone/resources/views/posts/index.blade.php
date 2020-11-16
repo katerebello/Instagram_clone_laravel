@@ -20,6 +20,7 @@
 
     </div><br>
     @foreach($posts as $post)
+    <!-- lhs -->
     <div class="row">
         <div class=" col-5 offset-3">
            <a href="/profile/{{ $post->user->id }}"><img class="img-fluid" src="/storage/{{$post -> image}}" alt=""></a><!--in order to set an default image if user didnt provide one include a function in profiles model-->

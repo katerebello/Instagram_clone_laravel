@@ -39,9 +39,9 @@
     <!--user posts-->
     <div class="row pt-5" id="posts">
         @foreach($user->posts as $post)
-            <div class="col-4 pb-4">
-            <a href="/p/{{$post->id}}">
-                <img src="/storage/{{ $post->image }}" alt="post" class="w-100">
+        <div class="col-4 pb-4">
+            <a href="/p/{{ $post->id }}">
+                <img src="/storage/{{ $post->image }}" style="object-fit: cover; max-width:100%; height:auto;" class="w-100 pt-4">
             </a>
             </div>
 
