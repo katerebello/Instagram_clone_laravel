@@ -55,13 +55,14 @@
                         @else
 
                         <div class="">
-                            <a href="/profile/{{ Auth::user()->profile->id }}">
+                            <a href="/explore"><img src="https://img.icons8.com/ios-filled/30/000000/compass--v2.png"/></a>
+                            <a href="/profile/{{ Auth::user()->id }}">
                                 <img src="{{ Auth::user()->profile->profileImage() }}" alt="" class="" style="border-radius:50%; width:40px">
                             </a>
                         </div>
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" style="color: black;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                {{ Auth::user()->username }} <span class="caret"></span>
+                                {{ Auth::user()->profileImage }}{{Auth::user()->username}} <span class="caret"></span>
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
