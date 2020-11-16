@@ -10,7 +10,8 @@ use Illuminate\Support\Facades\Cache;
 
 class ProfilesController extends Controller
 {
-    public function index(User $user) // User is actually /Post/user but we have imported at top ie.Post/User namespace so thats considered
+    // User is actually /Post/user but we have imported at top ie.Post/User namespace so thats considered
+    public function index(User $user)
     {
         //dd($user);//dd will echo out and stop the remaining operation
         //dd(User::find($user)); 
@@ -45,7 +46,7 @@ class ProfilesController extends Controller
                 return $user->following->count();
             }
         );
-        
+
         return view('profiles/index', compact('user', 'follows', 'postsCount', 'followersCount', 'followingCount'));
     }
 
@@ -88,10 +89,8 @@ class ProfilesController extends Controller
 
         if (request('image')) {
             $imagePath = request('image')->store('profile', 'public');
-
             $image = Image::make(public_path("storage/{$imagePath}"))->fit(1000, 1000);
             $image->save();
-
             $imageArray = ['image' => $imagePath];
         }
         //dd($data);
@@ -107,10 +106,5 @@ class ProfilesController extends Controller
         return redirect("/profile/{$user->id}");
 
         //dd($user);
-
-
-
-
-        // return redirect("/profile/{$user->id}");
     }
 }
