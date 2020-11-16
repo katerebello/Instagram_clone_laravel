@@ -13,34 +13,42 @@
                 <div class="d-flex pb-3">
                     <h1>{{ $user->username }}</h1>
 
+                    @can('view', $user->profile)
+                    <follow-button user-id="{{ $user->id }}" follows="{{ $follows }}"></follow-button>
                     <!--will refer to the FollowButton.vue-->
                     <!--the user-id here is passed to the .vue file-->
-                    @can('view', $user->profile)
-                        <follow-button user-id="{{ $user->id }}" follows="{{ $follows }}"></follow-button>
                     @endcan
                 </div>
 
                 <!-- if the user has the authorization to update the only the user will be allowed to add posts -->
                 @can('update', $user->profile)
-                    <a href="/p/create" style="color:black; text-decoration:none;">
-                        <i class="fas fa-plus" style="font-size: 15px;"></i>
-                        Add New Post
-                    </a>
+                <a href="/p/create" style="color:black; text-decoration:none;">
+                    <i class="fas fa-plus" style="font-size: 15px;"></i>
+                    Add New Post
+                </a>
                 @endcan
+
             </div>
+
+
+
+
             <div class="d-flex">
-                <div class="pr-3"> 
-                    <a href="#posts" class="text-decoration-none text-dark"><strong class="pr-1">{{ $postsCount }}</strong>Posts</a> 
-                </div>
-                <div class="pr-3"> 
-                    <a href="/profile/{{ $user->id }}/followers" class="text-decoration-none text-dark"><strong class="pr-1">
-                        {{ $user->profile->followers->count()}}</strong>followers
-                    </a> 
+                <div class="pr-3">
+                    <a href="#posts" style="text-decoration: none; color:black;">
+                        <strong class="pr-1">{{ $postsCount }}</strong>Posts</a>
                 </div>
                 <div class="pr-3">
-                    <a href="/profile/{{ $user->id }}/following" class="text-decoration-none text-dark"><strong class="pr-1">  
-                        {{ $user->following->count()}}</strong>following
-                    </a> 
+                    <a href="/profile/{{ $user->id }}/followers" style="text-decoration: none; color:black;">
+                        <strong class="pr-1">
+                            {{ $followersCount }}</strong>followers
+                    </a>
+                </div>
+                <div class="pr-3">
+                    <a href="/profile/{{ $user->id }}/following" style="text-decoration: none; color:black;">
+                        <strong class="pr-1">
+                            {{ $followingCount }}</strong>following
+                    </a>
                 </div>
             </div>
 
@@ -57,11 +65,14 @@
 
             <!-- description -->
             <div>{{ $user->profile->description }}</div>
-            <a href="{{ $user->profile->url }}" class="text-decoration-none text-dark">{{ $user->profile->url ?? 'N/A' }}
-            </a>
+
+            <!-- url -->
+            <div>
+                <a href="{{ $user->profile->url }}" style="text-decoration:none">{{ $user->profile->url ?? 'N/A' }}</a>
+            </div>
         </div>
     </div>
-
+    
     <!--user posts-->
     <div class="row pt-5" id="posts">
         @foreach($user->posts as $post)
