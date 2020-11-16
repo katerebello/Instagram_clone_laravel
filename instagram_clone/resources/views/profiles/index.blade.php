@@ -24,15 +24,15 @@
           
             <div class="d-flex">
                 <div class="pr-3"> 
-                    <a href="#posts" style="text-decoration: none; color:black;"><strong class="pr-2">{{ $postsCount }}</strong>Posts</a> 
+                    <a href="#posts" style="text-decoration: none; color:black;"><strong class="pr-1">{{ $postsCount }}</strong>Posts</a> 
                 </div>
                 <div class="pr-3"> 
-                    <a href="/profile/{{ $user->id }}/followers" style="text-decoration: none; color:black;"><strong class="pr-2">
+                    <a href="/profile/{{ $user->id }}/followers" style="text-decoration: none; color:black;"><strong class="pr-1">
                         {{ $user->profile->followers->count()}}</strong>followers
                     </a> 
                 </div>
                 <div class="pr-3">
-                    <a href="/profile/{{ $user->id }}/following" style="text-decoration: none; color:black;"><strong class="pr-2">  
+                    <a href="/profile/{{ $user->id }}/following" style="text-decoration: none; color:black;"><strong class="pr-1">  
                         {{ $user->following->count()}}</strong>following
                     </a> 
                 </div>
@@ -42,19 +42,9 @@
                 <a href="/profile/{{ $user->id }}/edit">edit profile</a>
             @endcan
 
-            <!-- title -->
-            <div class="font-weight-bold">{{ $user->profile->title }}</div>
-
-            <!-- description -->
-            <div>{{ $user->profile->description }}</div>
-            
-            <!-- url -->
-            <div>
-                <a href="{{ $user->profile->url }}" style="text-decoration:none;">{{ $user->profile->url ?? 'N/A' }}</a>
-            </div>
             <div class="pt-3 font-weight-bold">{{ $user->profile->title }}</div>
             <div>{{ $user->profile->description }}</div>
-            <a href="{{ $user->profile->url }}">{{ $user->profile->url ?? 'N/A' }}
+            <a href="{{ $user->profile->url }}" style="text-decoration:none">{{ $user->profile->url ?? 'N/A' }}
             </a>
         </div>
     </div>
