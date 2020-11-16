@@ -46,7 +46,7 @@ class ProfilesController extends Controller
             }
         );
         
-        return view('profiles.index', compact('user', 'follows', 'postsCount', 'followersCount', 'followingCount'));
+        return view('profiles/index', compact('user', 'follows', 'postsCount', 'followersCount', 'followingCount'));
     }
 
     public function edit(User $user)

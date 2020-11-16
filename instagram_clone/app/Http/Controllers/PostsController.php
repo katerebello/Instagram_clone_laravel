@@ -55,7 +55,7 @@ class PostsController extends Controller
     public function index(Post $post)
     {   
 
-        $users = auth()->user()->following->pluck('profiles.user_id');
+        $users = auth()->user()->following->pluck('user_id');
         //dd($users);
         $likes = (auth()->user())? auth()->user()->like->contains($post->id) : false;
         //dd($likes);
