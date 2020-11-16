@@ -1,44 +1,47 @@
 @extends('layouts.app')
 
-@section('profile')
-<h1>hey</h1>
+@section('form')
+
 @endsection
 
 @section('content')
 
 <div class="container">
+    <div  class="text-center">
+        <form action="/search" method="post">
+            {{ csrf_field()}}
+            <div >
+                <input type="text" name="q" placeholder="Search users"><span class="input-group-btn"></span>
+                <button type="submit" class="btn btn-default bg-light text-light">
+                    <span><img style="height:1em" src="https://img.icons8.com/material/24/000000/search--v1.png"/></span>
+                </button>
+            </div>
+        </form>
+
+    </div><br>
     @foreach($posts as $post)
     <div class="row">
-
-        <!-- lhs -->
-        <div class="col-7 offset-3">
-            <a href="/profile/{{ $post->user->id }}">
-                <img src="/storage/{{ $post->image }}" alt="" class="w-75">
-            </a>
+        <div class=" col-5 offset-3">
+           <a href="/profile/{{ $post->user->id }}"><img class="img-fluid" src="/storage/{{$post -> image}}" alt=""></a><!--in order to set an default image if user didnt provide one include a function in profiles model-->
         </div>
     </div>
-    <!-- rhs -->
     <div class="row">
-        <div class="col-7 offset-3">
-
-            <div class="d-flex pt-2 pb-4">
-                <span class="font-weight-bold h5">
-                    <a href="/profile/{{ $post->user_id }}" style="color:black;text-decoration:none;">{{ $post->user->username }}</a>
+        <div class="col-6 offset-3 pt-2 pb-3 align-items-center">
+            <like-button user-id="{{ $post->user->id }}" post-id="{{$post->id}}" likes="{{ $likes }}"></like-button> <!--this will refer to the actual component u added in app.js and the like-button.vue-->
+            likedby 
+            @foreach($post->likes as $like) 
+            <span>{{ $like->username }}</span>
+            @endforeach
+            <p>
+                <span class="font-weight-bold h6 ">
+                    <a  href="/profile/{{$post->user->id}}" class="text-dark">{{$post->user->username}}</a>
                 </span>
-                <p class="pl-2">{{ $post->caption }}</p>
-            </div>
+                {{$post->caption}}
+            </p>
+
         </div>
     </div>
-
     @endforeach
-
-    <!-- when paginate is called -->
-    <div class="row">
-        <div class="col-12  d-flex justify-content-center">
-            {{ $posts->links() }}
-        </div>
-    </div>
-
 </div>
-@endsection
 
+@endsection

@@ -33,7 +33,7 @@ class PostsController extends Controller
 
         $image_path = request('image')->store('uploads', 'public');
 
-        $image = Image::make(public_path("storage/{$image_path}"))->fit(1200, 1200);
+        $image = Image::make(public_path("storage/{$imagePath}"))->fit(1200, 1200);//uses the intervention pacakge installed
         $image->save();
 
         auth()->user()->posts()->create([
@@ -49,21 +49,26 @@ class PostsController extends Controller
         return view('posts/show', compact('post'));
     }
 
-    public function index(User $user)
-    {
-        // $likes = (auth()->user()) ? auth()->user()->LikePost->contains($user->id): false;
-        // return view('posts/index', compact('posts', 'likes'));
+    
 
-        
-        // grabs the users you are following
-        $users = auth()->user()->following()-> pluck('profiles.user_id');
-        
-        // grabs the posts of the user you are following
-        // paginate is posts per page
-        // with('user') loads all the users while grabbing posts (more efficient)
-        $posts = Post::whereIn('user_id', $users)->with('user')->latest()->paginate(5);
 
-        return view('posts/index', compact('posts'));
+    public function index(Post $post)
+    {   
+
+        $users = auth()->user()->following->pluck('user_id');
+        //dd($users);
+        $likes = (auth()->user())? auth()->user()->like->contains($post->id) : false;
+        //dd($likes);
+        $posts = Post::whereIn('user_id', $users)->latest()->get();
+       return view('posts.index', compact('posts','likes'));
     }
+
+    public function allposts()
+    {
+        $posts = Post::all();
+        //dd($posts);
+        return view('posts.allposts',compact('posts'));
+    }
+
 
 }

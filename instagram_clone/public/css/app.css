@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@700&display=swap);@charset "UTF-8";
 
 /*!
  * Bootstrap v4.5.0 (https://getbootstrap.com/)
@@ -2196,11 +2196,6 @@ pre code {
 }
 
 .form-control:-ms-input-placeholder {
-  color: #6c757d;
-  opacity: 1;
-}
-
-.form-control::-ms-input-placeholder {
   color: #6c757d;
   opacity: 1;
 }

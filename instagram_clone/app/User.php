@@ -39,20 +39,22 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    
+
+    //this boot method is extented by adding this so that the profile is created as we create a user
+    //checkout elequent model events documentation for more of such event methods
+    //here we used the created one so as soon as the record is added to the users table ..we can create a profile!!
     protected static function boot()
     {
         parent::boot();
 
-        // will execute when a new user registers
-        static::created(function ($user) {
+        static::created(function($user) {
             $user->profile()->create([
-                'title' => $user->username,
+                'title' => $user->username, //just we set title as username bydefault at first you can keepit blank as well if in profile model it can be null
             ]);
-            
+
             Mail::to($user->email)->send(new NewUserWelcomeMail());
-            
         });
+
     }
 
 
@@ -62,7 +64,7 @@ class User extends Authenticatable
     }
 
 
-    // a user has many following(profiles)
+    //here users can follow many profiles ie.following
     public function following()
     {
         return $this->belongsToMany(Profile::class);
@@ -74,4 +76,10 @@ class User extends Authenticatable
     }
 
 
+    //a user can like many posts
+    public function like()
+    {
+        return $this->belongsToMany(Post::class);
+    }
+    
 }

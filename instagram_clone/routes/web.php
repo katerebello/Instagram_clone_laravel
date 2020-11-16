@@ -4,7 +4,8 @@ use App\Http\Controllers\PostsController;
 use App\Mail\NewUserWelcomeMail;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-
+/*use App\Mail\NewUserWelcomeMail;*/
+ 
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,18 +18,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-
 Auth::routes();
-
-// welcome page
-Route::get('/', function () {
-    return view('welcome');
-});
-
-// mail
-Route::get('/email', function(){
+/*
+Route::get('/email',function(){
     return new NewUserWelcomeMail();
-});
+});*/
+
+Route::post('like/{user}/{post}','likeController@store');
+
+Route::post('/follow/{user}', 'FollowsController@store');
+
+Route::get('/', 'postscontroller@index');
 
 // follow button
 Route::post('/follow/{user}', 'FollowController@store');
@@ -39,6 +39,7 @@ Route::post('/follow/{user}', 'FollowController@store');
 // to create a post
 Route::get('/p/create', 'PostsController@create');
 
+Route::get('/p/{post}', 'PostsController@show');//to show a single image when v click on pne particular post
 
 Route::post('/p', 'PostsController@store');
 
@@ -54,8 +55,17 @@ Route::get('/p/{post}', 'PostsController@show');
 
 Route::get('/profile/{user}', 'ProfilesController@index')->name('profile.show');
 
-// edit profile
-Route::get('/profile/{user}/edit', 'ProfilesController@edit')->name('profile.edit');
+Route::get('/profile/{user}/edit', 'ProfilesController@edit')->name('profile.edit');//this will get the form
+Route::patch('/profile/{user}', 'ProfilesController@update')->name('profile.update');//this will update the form
 
-// update profile
-Route::patch('/profile/{user}', 'ProfilesController@update')->name('profile.update');
+Route::post('/search','ProfilesController@search');
+
+
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/explore','PostsController@allposts');
+
+Route::get('/profile/{user}/followers','FollowsController@viewfollowers');
+
+Route::get('/profile/{user}/following','FollowsController@viewfollowing');

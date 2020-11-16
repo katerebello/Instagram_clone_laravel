@@ -1,8 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
+use Intervention\Image\Facades\Image;
 
 use Illuminate\Http\Request;
+use App\User;
+
+
+
 
 class HomeController extends Controller
 {
@@ -21,8 +26,11 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function index(User $user)
     {
-        return view('home');
+        $users = $user->all();
+        //$profiles = Profile::where('id','!=','auth(id)')->get();
+        //dd($profiles);
+        return view('home',compact('users'));
     }
 }
