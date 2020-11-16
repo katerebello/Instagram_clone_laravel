@@ -9,7 +9,6 @@ use Illuminate\Support\Facades\Cache;
 
 class ProfilesController extends Controller
 {
-    //
     public function index(User $user) // User is actually /Post/user but we have imported at top ie.Post/User namespace so thats considered
     {
        //dd($user);//dd will echo out and stop the remaining operation
@@ -42,7 +41,7 @@ class ProfilesController extends Controller
             return view ('search',compact('found'));
         }
         else{
-            return('Not FOUND');
+            return('NOT FOUND');
         }
         //dd($users);
         //dd($search);
