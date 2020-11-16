@@ -20,20 +20,14 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">    
-    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
-</head>
-
-    
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">   
     
 </head>
-<style>
-    
-</style>
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand d-flex" href="{{ url('/home') }}">
+                <a class="navbar-brand d-flex" href="{{ url('/') }}">
                     <div><img src="/svg/instagram-logo.svg" style="height:22px; border-right:2px solid black;" class="pr-3"></div>
                     <div class="pl-3 pt-.95" style="font-weight:bold;">Instagram</div>
                 </a>

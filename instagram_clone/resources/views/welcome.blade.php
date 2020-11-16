@@ -22,7 +22,7 @@
     
 </head>
 
-<body>
+<body style="overflow-y: hidden;">
     <img id="background" src="/svg/bg.svg" alt="">
     <div class="full-height">
         <div class="appname">
