@@ -26,7 +26,7 @@
                     </div>
                     <div class="form-group row">
                         <label for="description" class="col-md-4 col-form-label">Description</label>
-                        <input id="description" type="description" class="form-control @error('description') is-invalid @enderror" name="description" value="{{ old('description')  ?? $user->profile->description }}" required autocomplete="description">
+                        <input id="description" type="description" class="form-control @error('description') is-invalid @enderror" name="description" value="{{ old('description')  ?? $user->profile->description }}" autocomplete="description">
 
                         @error('description')
                         <strong>{{ $errors->first('description') }}</strong>
@@ -34,7 +34,7 @@
                     </div>
                     <div class="form-group row">
                         <label for="url" class="col-md-4 col-form-label">Url</label>
-                        <input id="url" type="url" class="form-control @error('url') is-invalid @enderror" name="url" value="{{ old('url')  ?? $user->profile->url}}" required autocomplete="url">
+                        <input id="url" type="url" class="form-control @error('url') is-invalid @enderror" name="url" value="{{ old('url')  ?? $user->profile->url}}"  autocomplete="url">
 
                         @error('url')
                         <strong>{{ $errors->first('title') }}</strong>
