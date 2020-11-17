@@ -8,6 +8,8 @@ use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Intervention\Image\Facades\Image;
+use Illuminate\Support\Facades\Cache;
+
 
 
 class PostsController extends Controller
@@ -54,13 +56,13 @@ class PostsController extends Controller
 
     public function index(Post $post)
     {   
-
         $users = auth()->user()->following->pluck('user_id');
         //dd($users);
         $likes = (auth()->user())? auth()->user()->like->contains($post->id) : false;
         //dd($likes);
         $posts = Post::whereIn('user_id', $users)->with('user')->latest()->paginate(5);
-       return view('posts.index', compact('posts','likes'));
+
+        return view('posts.index', compact('posts','likes'));
     }
 
     public function allposts()

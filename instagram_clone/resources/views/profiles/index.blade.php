@@ -30,9 +30,6 @@
 
             </div>
 
-
-
-
             <div class="d-flex">
                 <div class="pr-3">
                     <a href="#posts" style="text-decoration: none; color:black;">
@@ -76,10 +73,17 @@
     <!--user posts-->
     <div class="row pt-5" id="posts">
         @foreach($user->posts as $post)
-        <div class="col-4 pb-4">
+        <div class="each_post_div col-4 pb-4">
             <a href="/p/{{ $post->id }}">
-                <img src="/storage/{{ $post->image }}" style="object-fit: cover; max-width:100%; height:auto;" class="w-100 pt-4">
+                <img src="/storage/{{ $post->image }}" class="w-100 pt-4 profile_each_post">
             </a>
+            <!-- on hover this will be visible -->
+            <div class="middle">
+                <div class="text">
+                    <i class="fas fa-heart mr-2" style="color:white;"></i>
+                    {{ $post->likes->count() }}
+                </div>
+            </div>
         </div>
 
         @endforeach

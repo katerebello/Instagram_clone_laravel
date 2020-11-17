@@ -11,13 +11,10 @@
     <div class="text-center mt-3">
         <form action="/search" method="post">
             {{ csrf_field()}}
-            <div >
-                <input type="text" name="q" placeholder="Search Users" size="80">
-                <span class="input-group-btn"></span>
-                <button type="submit" class="btn btn-default bg-light text-light">
-                    <span>
+            <div>
+                <input type="text" name="q" placeholder="Search Users" size="80" style="border-radius: 20px; outline:none; height:32px;" class="pl-2">
+                <button type="submit" class="btn btn-default bg-light text-light" style="border-radius: 20px;">
                         <img style="height:1em" src="https://img.icons8.com/material/24/000000/search--v1.png"/>
-                    </span>
                 </button>
             </div>
         </form>
@@ -48,6 +45,8 @@
             @foreach($post->likes as $like) 
             <span>{{ $like->username }}</span>
             @endforeach
+            <!-- $post->likes->count() -->
+            <!-- <strong class="pr-1">{{ $post->likes->count() }}</strong>Posts -->
             <p>
                 <span class="font-weight-bold h6 ">
                     <a  href="/profile/{{$post->user->id}}" class="text-dark">{{$post->user->username}}</a>
@@ -67,3 +66,5 @@
 </div>
 
 @endsection
+
+

@@ -1,9 +1,6 @@
 <template>
     <div class="container">
         <i class="fas fa-heart" @click="likePost" :class=" { changeColor: this.status }"></i>
-        
-        
-        <!-- <button class="btn btn-primary mr-1" @click="likePost" v-text="buttonText"></button> -->
     </div>
 </template>
 

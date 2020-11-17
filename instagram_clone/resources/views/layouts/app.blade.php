@@ -55,12 +55,15 @@
                         @endif
                         @else
 
-                        <div class="">
+                        <div class="mt-1">
+                            <a href="/home" title="Home" class="mr-3">
+                                <img src="https://img.icons8.com/fluent-systems-regular/30/000000/home.png"/>
+                            </a>
                             <a href="/explore" title="Explore" class="mr-3">
-                                <img src="https://img.icons8.com/ios-filled/40/000000/compass--v2.png"/>
+                                <img src="https://img.icons8.com/ios-filled/30/000000/compass--v2.png"/>
                             </a>
                             <a href="/profile/{{ Auth::user()->id }}">
-                                <img src="{{ Auth::user()->profile->profileImage() }}" alt="" class="" style="border-radius:50%; width:40px">
+                                <img src="{{ Auth::user()->profile->profileImage() }}" alt="" class="" width="30" height="30" style="border-radius:50%;">
                             </a>
                         </div>
                         <li class="nav-item dropdown">
