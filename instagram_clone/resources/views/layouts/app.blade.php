@@ -68,15 +68,21 @@
                         </div>
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" style="color: black;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                {{ Auth::user()->profileImage }}{{Auth::user()->username}} <span class="caret"></span>
+                                {{ Auth::user()->profileImage }} <span class="caret"></span>
                             </a>
 
                             <!-- settings -->
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="/profile/{{Auth::user()->id}}" >
+                                <span><img src="https://img.icons8.com/ios/20/000000/user-male-circle.png"/></span>
+                                    {{ __('Profile') }}
+                                </a>
                                 <a class="dropdown-item" href="/settings" >
+                                <span><img src="https://img.icons8.com/fluent-systems-regular/20/000000/settings.png"/></span>
                                     {{ __('Settings') }}
                                 </a>
-                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                <hr>
+                                <a class="dropdown-item " href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                     {{ __('Logout') }}
                                 </a>

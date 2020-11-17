@@ -11,7 +11,13 @@
             <!-- username -->
             <div class="d-flex justify-content-between align-items-baseline pt-4">
                 <div class="d-flex pb-3">
-                    <h1>{{ $user->username }}</h1>
+                    <h2>{{ $user->username }}</h2>
+                    <!-- edit profile -->
+                    @can('update', $user->profile)
+                    <div class="pt-1 pl-4" style="color='white'">
+                        <a href="/profile/{{ $user->id }}/edit" style="color:black; text-decoration:none;"><button class="rounded-sm bg-light">Edit Profile</button></a>
+                    </div>
+                    @endcan
 
                     @can('view', $user->profile)
                     <follow-button user-id="{{ $user->id }}" follows="{{ $follows }}"></follow-button>
@@ -49,13 +55,7 @@
                 </div>
             </div>
 
-            <!-- edit profile -->
-            @can('update', $user->profile)
-            <div class="pt-1 d-flex justify-content-end">
-                <i class="fas fa-user-edit pt-1 pr-1" style="font-size: 15px;"></i>
-                <a href="/profile/{{ $user->id }}/edit" style="color:black; text-decoration:none;">Edit Profile</a>
-            </div>
-            @endcan
+            
 
             <!-- title -->
             <div class="pt-3 font-weight-bold">{{ $user->profile->title }}</div>
