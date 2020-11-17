@@ -63,26 +63,26 @@
                                 <img src="https://img.icons8.com/ios-filled/30/000000/compass--v2.png"/>
                             </a>
                             <a href="/profile/{{ Auth::user()->id }}">
-                                <img src="{{ Auth::user()->profile->profileImage() }}" alt="" class="" width="30" height="30" style="border-radius:50%;">
+                                <img src="{{ Auth::user()->profile->profileImage() }}" alt="" class="" width="35" height="35" style="border-radius:50%;">
                             </a>
                         </div>
-                        <li class="nav-item dropdown">
+                        <li class="nav-item dropdown mt-1">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" style="color: black;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->profileImage }} <span class="caret"></span>
                             </a>
 
                             <!-- settings -->
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <div class="dropdown-menu dropdown-menu-right p-2" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="/profile/{{Auth::user()->id}}" >
-                                <span><img src="https://img.icons8.com/ios/20/000000/user-male-circle.png"/></span>
+                                <span><img src="https://img.icons8.com/ios/20/000000/user-male-circle.png" class="mb-1 mr-1"/></span>
                                     {{ __('Profile') }}
                                 </a>
                                 <a class="dropdown-item" href="/settings" >
-                                <span><img src="https://img.icons8.com/fluent-systems-regular/20/000000/settings.png"/></span>
+                                <span><img src="https://img.icons8.com/fluent-systems-regular/20/000000/settings.png" class="mb-1 mr-1"/></span>
                                     {{ __('Settings') }}
                                 </a>
                                 <hr>
-                                <a class="dropdown-item " href="{{ route('logout') }}" onclick="event.preventDefault();
+                                <a class="dropdown-item pl-5" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                     {{ __('Logout') }}
                                 </a>
@@ -103,5 +103,4 @@
         </main>
     </div>
 </body>
-
 </html>

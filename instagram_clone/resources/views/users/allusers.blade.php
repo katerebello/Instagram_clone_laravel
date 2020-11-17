@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-
+<!-- $user->profile->profileImage() -->
     <div class="container card mt-5 mb-5">
         <div class="row d-flex justify-content-center">
             <div class="col-2">
@@ -9,7 +9,7 @@
                         <a href="/profile/{{ $all_profile->id }}" class="p-5">
                             <img src="/storage/{{ $all_profile->image }}" 
                             alt="" width="50" height="50" style="border-radius: 50px;" 
-                            class="">
+                            id="all_users">
                         </a>
                     </div>
                 @endforeach
@@ -27,6 +27,4 @@
             
         </div>
     </div>
-
-
 @endsection
