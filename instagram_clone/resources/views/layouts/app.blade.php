@@ -21,6 +21,8 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">    
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">   
+
+    <!--bootstrap-->
     
 </head>
 <body>
@@ -77,10 +79,11 @@
                                 <span><img src="https://img.icons8.com/ios/20/000000/user-male-circle.png"/></span>
                                     {{ __('Profile') }}
                                 </a>
-                                <a class="dropdown-item" href="/settings" >
-                                <span><img src="https://img.icons8.com/fluent-systems-regular/20/000000/settings.png"/></span>
+                                <button class="dropdown-item"  class="btn" data-toggle="modal" data-target="#content">
+                                    <span><img src="https://img.icons8.com/fluent-systems-regular/20/000000/settings.png"/></span>
                                     {{ __('Settings') }}
-                                </a>
+                                </button>
+
                                 <hr>
                                 <a class="dropdown-item " href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -97,6 +100,34 @@
                 </div>
             </div>
         </nav>
+        <!--modal content-->
+        <div class="modal  " id="content">
+            <div class="modal-dailog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title">Theme</h1>
+                    </div>
+                
+                    <div class="modal-body">
+                        <div class="container card mt-5" >
+                            <div class="row p-5">
+                                <div class="col-lg-1">
+                                    <p class="mt-2 font-weight-bold">
+                                        Theme
+                                    </p>
+                                </div>
+                                <div class="col-lg-6">
+                                    <label class="switch">
+                                    <input id="check" type="checkbox" onclick="validate();">
+                                    <span class="slider round"></span> 
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <main class="py-4">
             @yield('content')

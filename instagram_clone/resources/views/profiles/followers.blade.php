@@ -6,7 +6,7 @@
     <div class="container card mt-5 p-4">
         <div class="row d-flex justify-content-center">
             <div class="col-2">
-                <a href="/profile/{{$follower->id}}" class="h3">
+                <a href="/profile/{{$follower->id}}">
                     <img src="/storage/{{$follower->profile->image}}" class="rounded-circle" width="80" height="80" alt="">
                 </a>
             </div>
