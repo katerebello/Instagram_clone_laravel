@@ -50699,15 +50699,3 @@ module.exports = __webpack_require__(/*! C:\Users\toshiba\Desktop\FINAL\laravel_
 /***/ })
 
 /******/ });
-
-    function validate(){
-        if(check.checked == 1){
-            //alert('checked!');
-            document.body.style.backgroundColor = "black";
-            document.nav.style.backgroundColor = "black";
-
-        }
-        else{
-            document.body.style.backgroundColor = "white";
-        }
-    }

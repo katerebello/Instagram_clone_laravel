@@ -8,11 +8,14 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>Login -CRK</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{{ asset('images/favicon.ico') }}" type="image/x-icon"> 
+    
     <!-- Fonts -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
     <link rel="dns-prefetch" href="//fonts.gstatic.com">

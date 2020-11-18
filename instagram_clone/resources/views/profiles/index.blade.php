@@ -1,10 +1,10 @@
 @extends('layouts.app')
-
+@section('title','Profile')
 @section('content')
 <div class="container">
     <div class="row">
         <div class="col-4 pt-4 pr-5 pl-5 pb-5">
-            <img src="{{ $user->profile->profileImage() }}" class="rounded-circle w-100" alt="">
+            <img src="{{ $user->profile->profileImage() }}" class="rounded-circle w-100" alt=""/>
             <!--here profileImage is a method we wrote in profiles model to get default image if not provided oresle the one provided-->
         </div>
         <div class="col-8 pt-5">
@@ -14,8 +14,10 @@
                     <h2>{{ $user->username }}</h2>
                     <!-- edit profile -->
                     @can('update', $user->profile)
-                    <div class="pt-1 pl-4" style="color='white'">
-                        <a href="/profile/{{ $user->id }}/edit" style="color:black; text-decoration:none;"><button class="rounded-sm bg-light">Edit Profile</button></a>
+                    <div class="pt-1 pl-4" style="color:white">
+                        <a href="/profile/{{ $user->id }}/edit" style="color:black;text-decoration:none;">
+                            <button class="rounded-sm bg-light">Edit Profile</button>
+                        </a>
                     </div>
                     @endcan
 
@@ -39,18 +41,17 @@
             <div class="d-flex">
                 <div class="pr-3">
                     <a href="#posts" style="text-decoration: none; color:black;">
-                        <strong class="pr-1">{{ $postsCount }}</strong>Posts</a>
+                        <span class="pr-1 font-weight-bold">{{ $postsCount }}</span>Posts
+                    </a>
                 </div>
                 <div class="pr-3">
                     <a href="/profile/{{ $user->id }}/followers" style="text-decoration: none; color:black;">
-                        <strong class="pr-1">
-                            {{ $followersCount }}</strong>followers
+                        <span class="pr-1 font-weight-bold">{{ $followersCount }}</span>followers
                     </a>
                 </div>
                 <div class="pr-3">
                     <a href="/profile/{{ $user->id }}/following" style="text-decoration: none; color:black;">
-                        <strong class="pr-1">
-                            {{ $followingCount }}</strong>following
+                        <span class="pr-1 font-weight-bold">{{ $followingCount }}</span>following
                     </a>
                 </div>
             </div>
@@ -65,7 +66,7 @@
 
             <!-- url -->
             <div>
-                <a href="{{ $user->profile->url }}" style="text-decoration:none">{{ $user->profile->url ?? 'N/A' }}</a>
+                <a href="{{ $user->profile->url }}" style="text-decoration:none">{{ $user->profile->url }}</a>
             </div>
         </div>
     </div>

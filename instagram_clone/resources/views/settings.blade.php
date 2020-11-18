@@ -1,6 +1,7 @@
 @extends('layouts.app')
-@section('content')
+@section('title','Settings')
 
+@section('content')
 <div class="container card mt-5" >
     <div class="row p-5">
         <div class="col-lg-1">
@@ -28,6 +29,4 @@
     }
     </script>
 </div>
-
-
 @endsection
