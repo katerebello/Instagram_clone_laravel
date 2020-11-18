@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('title','Following')
 @section('content')
 <div class="container card mt-5 p-4 mb-5">
     @foreach($followings as $following)

@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('title','Post')
 @section('content')
 <div class="container">
     <div class="row">
@@ -22,7 +22,7 @@
             <hr>
             <p>
                 <span class="font-weight-bold ">
-                    <a href="/profile/{{$post->user->id}}" class="text-dark ">{{$post->user->username}}</a>
+                    <a href="/profile/{{$post->user->id}}" class="text-dark" style="text-decoration: none;">{{$post->user->username}}</a>
                 </span>
                 {{$post->caption}}
             </p>

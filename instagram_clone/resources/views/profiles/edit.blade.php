@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('title','Edit Profile')
 @section('content')
 
 <div class="container card p-5 mt-5" style="overflow: auto;">
