@@ -11,22 +11,10 @@
         </div>
         <div class="col-lg-6">
             <label class="switch">
-                <input id="check" type="checkbox" onclick="validate();">
+                <input id="check" type="checkbox">
                 <span class="slider round"></span>
             </label>
         </div>
     </div>
-    <script>
-    function validate(){
-        if(check.checked == 1){
-            //alert('checked!');
-            document.body.style.backgroundColor = "dark";
-            document.nav.classlist.add = 'bg-dark';
-        }
-        else{
-            document.body.style.backgroundColor = "white";
-        }
-    }
-    </script>
 </div>
 @endsection
