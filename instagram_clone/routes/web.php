@@ -4,6 +4,7 @@ use App\Http\Controllers\PostsController;
 use App\Mail\NewUserWelcomeMail;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Mail;
 /*use App\Mail\NewUserWelcomeMail;*/
  
 /*
@@ -72,3 +73,5 @@ Route::get('/all', 'AllUsersController@show');
 Route::get('/settings', function(){
     return view('settings');
 });
+
+

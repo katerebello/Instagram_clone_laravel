@@ -51,7 +51,6 @@ class User extends Authenticatable
             $user->profile()->create([
                 'title' => $user->username, //just we set title as username bydefault at first you can keepit blank as well if in profile model it can be null
             ]);
-
             Mail::to($user->email)->send(new NewUserWelcomeMail());
         });
 

@@ -10,7 +10,7 @@
                     @if( $all_profile->image != false )
                     <img src="/storage/{{ $all_profile->image }}" alt="" width="50" height="50" style="border-radius: 50px;" id="all_users">
                     @else
-                    <img src="/storage/profile/MnCHs5CNqBGHtwVwsvQY73YS2QRvpvEaeRy7icMn.jpeg" alt="" width="50" height="50" style="border-radius: 50px;" id="all_users">
+                    <img src="/storage/profile/7wbefrd2tRPfctIqQ8LE8GHJoAbtU4LjA0z0Yvjq.png" alt="" width="50" height="50" style="border-radius: 50px;" id="all_users">
                     @endif
                 </a>
             </div>
@@ -21,7 +21,7 @@
             <div class="p-4 mt-2">
                 <a href="/profile/{{ $all_user->id }}" style="font-size:16px; 
                     color:black; display:block; text-decoration:none;" class="font-weight-bold mb-3">
-                    {{ $all_user->name}}
+                    {{ $all_user->username}}
                 </a>
             </div>
             @endforeach
