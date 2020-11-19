@@ -11,10 +11,19 @@
         </div>
         <div class="col-lg-6">
             <label class="switch">
-                <input id="check" type="checkbox">
+                <input id="check" name="check" type="checkbox" onclick="validate()">
                 <span class="slider round"></span>
             </label>
         </div>
     </div>
+    <script type="text/javascript">
+    function validate(){
+        var remember = document.getElementById('check');
+        if(remember.checked == 1){
+            window.alert("checked!");
+            //document.body.style.backgroundColor = "black";
+        }
+    }
+    </script>
 </div>
 @endsection
