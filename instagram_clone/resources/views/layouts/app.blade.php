@@ -79,15 +79,15 @@
 
                             <!-- settings -->
                             <div class="dropdown-menu dropdown-menu-right p-2" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="/profile/{{Auth::user()->id}}" >
+                                <a class="dropdown-item" href="/profile/{{Auth::user()->id}}">   
                                 <span><img src="https://img.icons8.com/ios/20/000000/user-male-circle.png" class="mb-1 mr-1"/></span>
                                     {{ __('Profile') }}
                                 </a>
-                                <a class="dropdown-item" href="/settings" >
+                                <a class="dropdown-item" href="/settings" > 
                                 <span><img src="https://img.icons8.com/fluent-systems-regular/20/000000/settings.png" class="mb-1 mr-1"/></span>
                                     {{ __('Settings') }}
                                 </button>
-
+                                </a>
                                 <hr>
                                 <a class="dropdown-item pl-5" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -104,7 +104,7 @@
                 </div>
             </div>
         </nav>
-        <!--modal content-->
+        <!--modal content--><!--
         <div class="modal  " id="content">
             <div class="modal-dailog">
                 <div class="modal-content">
@@ -132,7 +132,7 @@
                 </div>
             </div>
         </div>
-
+-->
         <main class="py-4">
             @yield('content')
         </main>

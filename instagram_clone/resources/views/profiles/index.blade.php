@@ -16,7 +16,7 @@
                     @can('update', $user->profile)
                     <div class="pt-1 pl-4" style="color:white">
                         <a href="/profile/{{ $user->id }}/edit" style="color:black;text-decoration:none;">
-                            <button class="rounded-sm bg-light">Edit Profile</button>
+                            <button class="btn btn-outline-dark ">Edit Profile</button>
                         </a>
                     </div>
                     @endcan
