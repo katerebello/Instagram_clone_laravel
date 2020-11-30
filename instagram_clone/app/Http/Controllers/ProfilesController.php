@@ -56,7 +56,7 @@ class ProfilesController extends Controller
         $this->authorize('update', $user->profile); //authorized the statement we wrote in profilepolicy
         return view('profiles/edit', compact('user'));
     }
-
+ 
     public function search(User $user, Request $request)
     {
         //dd($user->all());

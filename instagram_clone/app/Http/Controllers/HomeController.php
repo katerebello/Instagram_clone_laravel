@@ -6,9 +6,6 @@ use Intervention\Image\Facades\Image;
 use Illuminate\Http\Request;
 use App\User;
 
-
-
-
 class HomeController extends Controller
 {
     /**
