@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatesProfileUserPivotTable extends Migration
+class CreateFeedbackTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,20 @@ class CreatesProfileUserPivotTable extends Migration
      */
     public function up()
     {
-        Schema::create('profile_user', function (Blueprint $table) {
+        Schema::create('feedback', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('profile_id');//pivot table is used when there is many to many relationship betn the entities here User and Profile table
             $table->unsignedBigInteger('user_id');
-            $table->timestamps(); 
+            $table->string('look');
+            $table->string('found');
+            $table->string('ui');
+            $table->string('recommend');
+            $table->text('comments')->nullable();
+            $table->timestamps();
+
+            $table->index('user_id');
         });
     }
-    
+
     /**
      * Reverse the migrations.
      *
@@ -28,6 +34,6 @@ class CreatesProfileUserPivotTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('profile_user');
+        Schema::dropIfExists('feedback');
     }
 }

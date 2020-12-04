@@ -15,7 +15,7 @@ class User extends Authenticatable
     /**
      * The attributes that are mass assignable.
      *
-     * @var array
+     * @var array    
      */
     protected $fillable = [
         'name', 'email','username', 'password',
@@ -72,6 +72,11 @@ class User extends Authenticatable
     public function profile()
     {
         return $this->hasOne(Profile::class);
+    }
+
+    public function feedback()
+    {
+        return $this->hasOne(feedback::class);
     }
 
 

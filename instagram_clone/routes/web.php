@@ -75,3 +75,15 @@ Route::get('/settings', function(){
 });
 
 
+//feedback
+/*Route::get('/feedback',function(){
+    return view('feedbackform');
+});*/
+
+Route::get('/feedback','feedbackController@index');
+
+
+
+Route::post('/storefeedback','feedbackController@store');
+
+Route::get('/allreviews','feedbackController@allreviews');

@@ -2,7 +2,7 @@ html,
 body {
     background: url();
     color: #000;
-    font-family: 'Nunito', sans-serif;
+    font-family: "Nunito", sans-serif;
     font-weight: 200;
     height: 100vh;
     margin: 0;
@@ -13,13 +13,23 @@ body {
     margin-left: 400px;
 }
 
+.radio {
+    width: 30px;
+    height: 30px;
+}
+
+.label {
+    font-size: x-large;
+    font-family: "Times New Roman", Times, serif;
+}
+
 .appname {
     text-align: center;
     margin-top: 130px;
 }
 
 .name {
-    font-family: 'Pacifico', sans-serif;
+    font-family: "Pacifico", sans-serif;
     font-size: 80px;
 }
 
@@ -41,15 +51,14 @@ body {
     border-radius: 15px;
     width: 400px;
     margin-bottom: 20px;
-
 }
 
-.links>a {
+.links > a {
     color: #000;
     padding: 5px;
     font-size: 13px;
     font-weight: 600;
-    letter-spacing: .1rem;
+    letter-spacing: 0.1rem;
     text-decoration: none;
     text-transform: uppercase;
     display: block;
@@ -77,19 +86,18 @@ body {
     height: 52px;
 }
 
-.imgblock>a {
+.imgblock > a {
     margin-left: 10px;
 }
 
 #background {
     position: absolute;
-    opacity: .9;
+    opacity: 0.9;
     width: 600px;
     top: 100px;
     left: 170px;
     z-index: -1;
 }
-
 
 /* toggle button */
 .switch {
@@ -113,8 +121,8 @@ body {
     right: 0;
     bottom: 0;
     background-color: #ccc;
-    -webkit-transition: .4s;
-    transition: .4s;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
 }
 
 .slider:before {
@@ -125,19 +133,19 @@ body {
     left: 4px;
     bottom: 4px;
     background-color: white;
-    -webkit-transition: .4s;
-    transition: .4s;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
 }
 
-input:checked+.slider {
+input:checked + .slider {
     background-color: #0c2b44;
 }
 
-input:focus+.slider {
+input:focus + .slider {
     box-shadow: 0 0 1px #0c2b44;
 }
 
-input:checked+.slider:before {
+input:checked + .slider:before {
     -webkit-transform: translateX(26px);
     -ms-transform: translateX(26px);
     transform: translateX(26px);
@@ -164,12 +172,12 @@ input:checked+.slider:before {
     /* like thingy animation */
     opacity: 1;
     display: block;
-    transition: .5s ease;
+    transition: 0.5s ease;
     backface-visibility: hidden;
 }
 
 .middle {
-    transition: .5s ease;
+    transition: 0.5s ease;
     opacity: 0;
     position: absolute;
     top: 50%;
