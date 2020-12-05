@@ -37,7 +37,7 @@
                 <a class="navbar-brand d-flex" href="{{ url('/') }}">
                     <div><img src="/svg/instagram-logo.svg" style="height:22px; border-right:2px solid black;"
                             class="pr-3"></div>
-                    <div class="pl-3 pt-.95" style="font-weight:bold;">Instagram</div>
+                    <div class="pl-3 pt-.95" style="font-weight:bold;">InstaCRK</div>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"

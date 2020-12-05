@@ -21,14 +21,14 @@
 
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-    
+
 </head>
 
 <body style="overflow-y: hidden;">
     <img id="background" src="/svg/bg.svg" alt="">
     <div class="full-height">
         <div class="appname">
-            <div class="name">Instagram</div>
+            <div class="name">InstaCRK</div>
         </div>
 
 
@@ -58,7 +58,8 @@
                 <img class="img app" src="/svg/app-store.svg" alt="">
             </a>
 
-            <a class="download " href="https://play.google.com/store/apps/details?id=com.instagram.android&hl=en_IN" target="_blank">
+            <a class="download " href="https://play.google.com/store/apps/details?id=com.instagram.android&hl=en_IN"
+                target="_blank">
                 <img class="img play" src="/svg/play-store.svg" alt="">
             </a>
         </div>
