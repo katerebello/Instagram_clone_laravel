@@ -7,7 +7,7 @@
     <h1 class="text-light">THANKYOU ! </h1>
     <h2 class="text-light"> {{ $message }}</h2>
     <a href="/profile/{{ auth()->user()->id }}"> <button class="btn btn-primary">Back</button> </a>
-    <a href="/allreviews"><button class="btn btn-primary">All Reviews</button> </a>
+    <!--<a href="/allreviews"><button class="btn btn-primary">All Reviews</button> </a>-->
 
 </div>
 

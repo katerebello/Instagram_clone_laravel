@@ -2,18 +2,19 @@
 <!--@section('title','Add new post')-->
 @section('content')
 
-<div class="container card p-5 mt-5">
+<div class="container card p-2 mt-5">
     <form action="/storefeedback" id="feedback" enctype="multipart/form-data" method="POST">
         @csrf
         <div class="row offset-3">
 
             <div class="col-8 ">
                 <div class="row">
-                    <h3 class="pt-4 ml-3 h3" style="font-weight: bold;">FEEDBACK FORM</h3>
+                    <b class="pt-4 ml-3 h3 colorh">FEEDBACK FORM</b>
                 </div>
+                <hr>
                 <!--q1-->
-                <div class="form-group row  ml-2">
-                    <label class="label" for="look" class="col-md-12 col-form-label ">Are You satisfied with the
+                <div class="form-group row  ml-2  color">
+                    <label class="label" for="look" class="col-md-12 col-form-label">1.Are You satisfied with the
                         look and feel of the app?</label>
                 </div>
                 <div class=" form-group row">
@@ -27,9 +28,9 @@
                     </div>
                 </div>
                 <!--q2-->
-                <div class="form-group row ml-3">
+                <div class="form-group row ml-3 color ">
                     <div class="row">
-                        <label class="label" for="found" class="col-md-12 col-form-label">How did you find out
+                        <label class="label" for="found" class=" col-md-12 col-form-label ">2.How did you find out
                             about
                             the app?</label>
                     </div>
@@ -45,7 +46,7 @@
                 <!--3-->
                 <div class="form-group row">
                     <div class="col-md-12">
-                        <label for="ui" class="label col-form-label">How would you rate the overall UI of the
+                        <label for="ui" class="label col-form-label color">3.How would you rate the overall UI of the
                             app?</label>
                     </div>
                     <div>
@@ -56,7 +57,8 @@
                 <!--q4-->
                 <div class="form-group row">
                     <div class="col-md-12">
-                        <label class="label col-form-label " for="recommend" name="recommend">How likely are you to
+                        <label class="label col-form-label color " for="recommend" name="recommend">4.How likely are you
+                            to
                             recommend
                             this app to a friend or colleague?</label>
                     </div>
@@ -66,7 +68,8 @@
                 </div>
                 <div class="form-group row">
                     <div class="col-md-12">
-                        <label class="label col-form-label " for="" name="comments">Drop In Your Additional Comments
+                        <label class="label col-form-label color" for="" name="comments">5.Drop In Your Additional
+                            Comments
                             Here!</label>
                     </div>
                     <div>

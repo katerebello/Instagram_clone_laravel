@@ -30,7 +30,7 @@ body {
 
 .name {
     font-family: "Pacifico", sans-serif;
-    font-size: 80px;
+    font-size: 50px;
 }
 
 .subtitle {
@@ -199,4 +199,14 @@ input:checked + .slider:before {
     color: white;
     font-size: 20px;
     padding: 16px 32px;
+}
+
+/*feedback*/
+.color {
+    font-style: italic;
+    color: darkblue;
+}
+.colorh {
+    color: orange;
+    font-size: xx-large;
 }
