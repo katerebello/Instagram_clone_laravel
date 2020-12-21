@@ -1,4 +1,4 @@
-# Electronic Store Management System 
+# Instagram Clone
 
 ### Table of Contents:
 1. <a href="#details">Project Details</a> 
